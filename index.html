@@ -57,7 +57,18 @@
             padding-top: 6rem;
             min-height: 100vh;
         }
-
+        
+        /* New CSS for the TryHackMe badge */
+        .tryhackme-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 250px;
+            height: 300px;
+            border: none;
+            z-index: 999;
+        }
+        
         .hero-section {
             display: flex;
             flex-direction: column;
@@ -138,8 +149,11 @@
 </head>
 <body>
     <header>
-        <h1>Saeed Ahmed</h1><iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1364726" style='border:none;'></iframe>
+        <h1>Saeed Ahmed</h1>
     </header>
+    
+    <iframe class="tryhackme-badge" src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1364726"></iframe>
+    
     <main>
         <section class="hero-section">
             <h1 class="main-title">Saeed Ahmed</h1>
@@ -154,7 +168,6 @@
         <section class="content-section">
             <h2>Credentials & Badges</h2>
             <div class="badge-container">
-                
                 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="be87d0ad-02c3-4d14-ae5d-7b3d8cc301c2" data-share-badge-host="https://www.credly.com"></div>
                 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="d28ebef8-429f-48ea-8ed0-e67a1cbfae9f" data-share-badge-host="https://www.credly.com"></div>
                 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="c2a58f47-b8d8-40aa-9774-2ca92ab4ade9" data-share-badge-host="https://www.credly.com"></div>
@@ -162,7 +175,6 @@
                 <a href="https://www.credly.com/users/saeedahmed40/badges#other" target="_blank" class="badge-link">
                     <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/122222083" alt="Accredible Badge">
                 </a>
-             
             </div>
         </section>
         
