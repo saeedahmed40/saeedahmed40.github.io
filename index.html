@@ -20,7 +20,7 @@
             --font-family-body: 'Roboto', sans-serif;
         }
 
-       body {
+        body {
             background-color: var(--dark-background);
             color: var(--light-text);
             font-family: var(--font-family-body);
@@ -76,17 +76,19 @@
         }
 
         .badge-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            justify-items: center;
+            align-items: center;
             gap: 20px;
+            padding: 20px 0;
         }
 
         .content-section {
             max-width: 800px;
             margin: 2rem auto;
             padding: 2rem;
-            background-color: #242424; /* A slightly lighter dark grey for contrast */
+            background-color: #242424;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
@@ -105,9 +107,10 @@
             margin-bottom: 2rem;
         }
         
-        iframe {
+        iframe, .badge-link img {
             display: block;
-            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
         }
 
         .btn {
@@ -137,7 +140,6 @@
             font-size: 0.8rem;
             color: var(--secondary-text);
         }
-
     </style>
 </head>
 <body>
@@ -147,7 +149,6 @@
     <main>
         <section class="hero-section">
             <h1 class="main-title">Saeed Ahmed</h1>
-            <image></image>
             <p>Cybersecurity Specialist & Researcher</p>
         </section>
 
@@ -159,14 +160,20 @@
         <section class="content-section">
             <h2>Credentials & Badges</h2>
             <div class="badge-container">
-                <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1364726" style='border:none; width:100%; max-width: 250px; height: 300px;'></iframe>
-                <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/122222083" alt="Badge" style="border: 0; width:200; height:270;"<a href="https://www.credly.com/users/saeedahmed40/badges#other"</a>
-                <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="be87d0ad-02c3-4d14-ae5d-7b3d8cc301c2" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-                <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="d28ebef8-429f-48ea-8ed0-e67a1cbfae9f" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-                <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="c2a58f47-b8d8-40aa-9774-2ca92ab4ade9" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>       
-                <script type="text/javascript" src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                <a href="https://tryhackme.com/p/saeedahmed" target="_blank" class="badge-link">
+                    <img src="https://img.shields.io/badge/TryHackMe-saeedahmed-blue?style=for-the-badge&logo=tryhackme&logoColor=white" alt="TryHackMe Badge">
+                </a>
+
+                <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="be87d0ad-02c3-4d14-ae5d-7b3d8cc301c2" data-share-badge-host="https://www.credly.com"></div>
+                <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="d28ebef8-429f-48ea-8ed0-e67a1cbfae9f" data-share-badge-host="https://www.credly.com"></div>
+                <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="c2a58f47-b8d8-40aa-9774-2ca92ab4ade9" data-share-badge-host="https://www.credly.com"></div>
+
+                <a href="https://www.credly.com/users/saeedahmed40/badges" target="_blank" class="badge-link">
+                    <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/122222083" alt="Accredible Badge">
+                </a>
             </div>
         </section>
+        
         <section class="content-section">
             <h2>Contact</h2>
             <p>If you would like to get in touch, please feel free to reach out via email or connect with me on LinkedIn.</p>
@@ -181,6 +188,7 @@
         <a href="https://orcid.org/0009-0003-0613-4368" class="btn">ORCID</a>
         <p>&copy; 2025 Saeed Ahmed. All Rights Reserved.</p>
     </footer>
-    <script src="embed.js"></script> 
+
+    <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 </body>
 </html>
