@@ -47,9 +47,8 @@
             margin: 0;
         }
 
-        /* Main Content Styling */
         main {
-            padding-top: 6rem; /* Adjusts for the fixed header */
+            padding-top: 6rem;
             min-height: 100vh;
         }
 
@@ -59,7 +58,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            min-height: calc(100vh - 8rem); /* Adjusts for header and footer */
+            min-height: calc(100vh - 8rem);
         }
 
         .hero-section .main-title {
@@ -70,7 +69,13 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Container for content sections */
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
         .content-section {
             max-width: 800px;
             margin: 2rem auto;
