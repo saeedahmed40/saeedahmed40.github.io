@@ -66,6 +66,38 @@
             text-align: center;
             min-height: calc(100vh - 8rem);
         }
+        .typewriter {
+           display: flex;
+           justify-content: center;
+        }
+
+        .typewriter h1 {
+            font-family: var(--font-family-header);
+            color: var(--light-text);
+            font-size: 3.5rem;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+            border-right: .15em solid var(--light-text);
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: var(--light-text);
+            }
+        }
 
         .hero-section .main-title {
             font-family: var(--font-family-header);
@@ -149,7 +181,9 @@
                 stye="centre"
                 alt="profile_pic"
                 >
-            <h1 class="main-title">Saeed Ahmed</h1>
+            <div class="typewriter">
+                <h1 class="main-title">Saeed Ahmed</h1>
+            </div>    
             <p>Cybersecurity Specialist & Researcher</p>
         </section>
 
