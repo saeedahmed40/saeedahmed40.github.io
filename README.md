@@ -1,5 +1,3 @@
-# saeedahmed40.github.io
-
 # Saeed Ahmed's Cybersecurity Portfolio
 ---------------------------------------
 This repository contains the source code for my personal portfolio website, showcasing my work and research in the field of cybersecurity. The live version of this portfolio can be viewed at saeedahmed40.com.
