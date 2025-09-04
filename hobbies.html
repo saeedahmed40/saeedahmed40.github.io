@@ -32,7 +32,13 @@
             <div class="project-card">
                 <h2>Reading</h2>
                  <p>A live feed of my reading activity from Goodreads.</p>
-                 <script type="text/javascript" src="//feed.surfing-waves.com/js/rss-feed.js"></script>
+                 <script type="text/javascript">
+                     new RSSFeed({
+                         container: 'rss-feed',
+                         feedUrl: 'https://www.goodreads.com/review/list/12345678?shelf=read&format=xml',
+                         itemTemplate: '<div class="book"><h3>{{title}}</h3><p>{{author}}</p><p>{{date}}</p></div>'
+                     });
+                 </script>
         </section>
 
         <footer>
