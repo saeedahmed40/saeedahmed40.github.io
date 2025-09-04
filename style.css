@@ -28,6 +28,13 @@ p, ul, li {
     color: var(--secondary-text);
 }
 
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
 header {
     position: fixed;
     top: 0;
@@ -178,7 +185,7 @@ main {
 .badge-container img,
 .badge-container iframe,
 .badge-container .tryhackme {
-    width: 150px;
+    width: auto;
     height: auto;
     transition: transform 0.3s ease-in-out;
 }
