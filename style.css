@@ -239,3 +239,49 @@ footer {
         padding: 1rem;
     }
 }
+#gr_grid_widget_1756998401 {
+    width: 100%;
+}
+.gr_grid_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.gr_grid_book_container {
+    width: auto;
+    height: auto;
+    padding: 0;
+    overflow: visible;
+}
+.gr_grid_book_container img {
+    width: 120px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.gr_grid_book_container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+}
+.gr_grid_branding {
+    display: block;
+    text-align: center;
+    clear: both;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.gr_grid_branding:hover {
+    color: var(--primary-accent);
+}
+.gr_grid_branding img {
+    vertical-align: middle;
+    margin-left: 0.3rem;
+    height: 1em; 
+}
