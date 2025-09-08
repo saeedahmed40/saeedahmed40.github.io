@@ -131,6 +131,48 @@ main {
     from, to { border-color: transparent; }
     50% { border-color: var(--primary-accent); }
 }
+.email_form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.email_form label {
+    font-family: var(--font-family-header);
+    color: var(--secondary-text);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: -0.5rem;
+}
+
+.email_form input[type="text"],
+.email_form input[type="email"],
+.email_form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: var(--dark-background);
+    border: 2px solid var(--secondary-text);
+    border-radius: 4px;
+    color: var(--light-text);
+    font-family: var(--font-family-body);
+    font-size: 1.1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.email_form input[type="text"]:focus,
+.email_form input[type="email"]:focus,
+.email_form textarea:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 10px rgba(27, 202, 50, 0.4);
+}
+
+.email_form button[type="submit"] {
+    align-self: flex-start; 
+    cursor: pointer;
+}
 
 .button-group {
     display: flex;
