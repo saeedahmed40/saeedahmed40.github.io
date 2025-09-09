@@ -1,8 +1,24 @@
 function parseCSV(text) {
     const lines = text.trim().split('\n');
-    const header = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+    const header = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
+
     const rows = lines.slice(1).map(line => {
-        const values = line.split(',').map(v => v.trim().replace(/"/g, ''));
+        const values = [];
+        let current = '';
+        let inQuotes = false;
+        for (let i = 0; i < line.length; i++) {
+            const char = line[i];
+            if (char === '"') {
+                inQuotes = !inQuotes;
+            } else if (char === ',' && !inQuotes) {
+                values.push(current.trim().replace(/^"|"$/g, ''));
+                current = '';
+            } else {
+                current += char;
+            }
+        }
+        values.push(current.trim().replace(/^"|"$/g, ''));
+
         let obj = {};
         header.forEach((h, i) => {
             obj[h] = values[i];
