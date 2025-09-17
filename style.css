@@ -20,14 +20,6 @@ body {
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    flex-wrap: wrap;
-}
-.flex{
-    flex: 1;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 p, ul, li {
     font-size: 1.1rem;
