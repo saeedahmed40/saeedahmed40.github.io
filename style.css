@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap');
+/* CORRECTED: Weights in the font URL must be separated by commas, not semicolons. */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400,700&family=Roboto:wght@300,400&display=swap');
 
 :root {
     --dark-background: #1a1a1a;
@@ -15,12 +16,14 @@ body {
     font-family: var(--font-family-body);
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(1deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://pbs.twimg.com/media/FcIQfBbXgAAkaAa?format=jpg&name=4096x4096');
+    /* The linear-gradient provides a dark overlay, improving text readability over the image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://pbs.twimg.com/media/FcIQfBbXgAAkaAa?format=jpg&name=4096x4096');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
+
 p, ul, li {
     font-size: 1.1rem;
     line-height: 1.6;
@@ -42,6 +45,7 @@ header {
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
 .nav-links {
     display: flex;
     gap: 1rem;
@@ -57,7 +61,8 @@ header h1 {
 }
 
 main {
-    padding-top: 6rem;
+    /* Padding to prevent content from hiding behind the fixed header */
+    padding-top: 6rem; 
     min-height: 100vh;
 }
 
@@ -67,7 +72,7 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: calc(100vh - 8rem);
+    min-height: calc(100vh - 6rem); /* Adjusted to match main's padding-top for full viewport height */
     padding: 2rem;
 }
 
@@ -100,13 +105,6 @@ main {
     box-shadow: 0 0 15px rgba(27, 202, 50, 0.5);
 }
 
-.typing-effect {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: .15em solid var(--primary-accent);
-    animation: typing 3s steps(30, end) forwards, blink 1s step-end infinite;
-}
-
 .main-title {
     font-family: var(--font-family-header);
     color: var(--primary-accent);
@@ -115,13 +113,24 @@ main {
     margin-bottom: 0.5rem;
 }
 
+.typing-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .15em solid var(--primary-accent);
+    animation: typing 3s steps(30, end) forwards, blink 1s step-end infinite;
+}
+
 .sub-title {
     font-size: clamp(1rem, 2vw, 1.5rem);
     color: var(--light-text);
     margin-bottom: 2rem;
-    animation-delay: 3s, 3s; 
+    /* CORRECTED: Added animation properties to make use of the existing animation-delay */
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 3s; 
 }
 
+/* Keyframe animations */
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
@@ -131,6 +140,13 @@ main {
     from, to { border-color: transparent; }
     50% { border-color: var(--primary-accent); }
 }
+
+/* ADDED: A simple fade-in animation for the subtitle */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .email_form {
     display: flex;
     flex-direction: column;
@@ -157,7 +173,7 @@ main {
     color: var(--light-text);
     font-family: var(--font-family-body);
     font-size: 1.1rem;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensures padding is included in the width */
     transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -272,6 +288,7 @@ footer {
     color: var(--secondary-text);
 }
 
+/* Media query for responsive adjustments */
 @media (max-width: 768px) {
     .content-section {
         padding: 2rem 1.5rem;
@@ -281,6 +298,8 @@ footer {
         padding: 1rem;
     }
 }
+
+/* Goodreads Widget Overrides */
 #gr_grid_widget_1756998401 {
     width: 100%;
 }
@@ -326,4 +345,25 @@ footer {
     vertical-align: middle;
     margin-left: 0.3rem;
     height: 1em; 
+}
+.gr_grid_book_title {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    color: var(--light-text);
+    text-align: center;
+}
+.gr_grid_book_author {
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+    text-align: center;
+}
+.gr_grid_book_rating {
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+    text-align: center;
+}
+.gr_grid_book_container {
+    flex: 1 1 120px;
+    max-width: 120px;
+    box-sizing: border-box;
 }
