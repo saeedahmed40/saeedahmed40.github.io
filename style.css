@@ -335,6 +335,8 @@ iframe {
 }
 
 .module-year li strong {
+    font-weight: 700;
+    text-transform: uppercase;
     color: var(--primary-accent);
     margin-left: 0.5rem;
 }
