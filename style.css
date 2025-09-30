@@ -476,3 +476,33 @@ footer {
     color: var(--dark-background);
     cursor: default;
 }
+.tryhackme details{
+    margin-top: 1.5rem;
+}
+
+.tryhackme details summary {
+    cursor: pointer;
+    font-family: var(--font-family-header);
+    font-weight: 700;
+    color: var(--primary-accent);
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    outline: none;
+}
+
+.tryhackme details summary::-webkit-details-marker {
+    display: none;
+}
+.tryhackme details summary {
+    list-style: none;
+}
+
+.tryhackme details summary:hover {
+    background-color: rgba(27, 202, 50, 0.1);
+}
+
+.tryhackme details[open] > summary {
+    margin-bottom: 1.5rem;
+}
