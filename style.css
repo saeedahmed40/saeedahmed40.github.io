@@ -506,3 +506,28 @@ footer {
 .tryhackme details[open] > summary {
     margin-bottom: 1.5rem;
 }
+.project-card details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    table-layout: fixed;
+}
+
+.project-card details table td {
+    padding: 0.8rem 0.5rem;
+    border-bottom: 1px solid #333;
+    color: var(--secondary-text);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+}
+
+.project-card details table td a {
+    color: var(--primary-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.project-card details table td a:hover {
+    color: var(--light-text);
+    text-decoration: underline;
+}
