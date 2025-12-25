@@ -18,4 +18,12 @@ This website is built with fundamental web technologies:
 - HTML5
 - CSS3
 - JavaScript
+
 # License
+
+## Code
+The source code for this website is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute the code for your own projects.
+
+## Content
+The content of this website (including text, images(except for company logos), blog posts, and project descriptions) is **Copyright &copy; 2025 Saeed Ahmed**. All rights reserved.
+
