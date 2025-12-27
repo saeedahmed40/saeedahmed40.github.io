@@ -349,7 +349,7 @@ footer {
     color: var(--secondary-text);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) (max-length:1280px) {
     .content-section {
         padding: 2rem 1.5rem;
     }
@@ -358,7 +358,7 @@ footer {
         padding: 1rem;
     }
 }
-
+ 
 #gr_grid_widget_1756998401 {
     width: 100%;
 }
