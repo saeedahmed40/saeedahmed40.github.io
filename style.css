@@ -553,3 +553,20 @@ footer {
   width: 100%;
   height: 100%;
 }
+
+/* Responsive container for embeds that are 3:2 (e.g., Substack) */
+.embed-container {
+    position: relative;
+    padding-bottom: 66.6667%; /* 3:2 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
