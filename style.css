@@ -541,7 +541,7 @@ footer {
 }
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* Calculates height based on a 16:9 ratio of the width (9/16 = 0.5625) */
+  padding-bottom: 56.25%; 
   height: 0;
   overflow: hidden;
 }
@@ -554,10 +554,10 @@ footer {
   height: 100%;
 }
 
-/* Responsive container for embeds that are 3:2 (e.g., Substack) */
+
 .embed-container {
     position: relative;
-    padding-bottom: 66.6667%; /* 3:2 aspect ratio */
+    padding-bottom: 66.6667%;
     height: 0;
     overflow: hidden;
     border-radius: 8px;
