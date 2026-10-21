@@ -1,129 +1,1564 @@
 <!DOCTYPE html>
 <html lang="en-GB">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Saeed Ahmed, MBCS - IT Cybersecurity Officer & Applied Security Researcher" />
-  <title>Saeed Ahmed, MBCS | Cybersecurity &amp; Research Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Saeed Ahmed</title>
+    <meta name="description"
+        content="Saeed Ahmed: First Class Honours cybersecurity graduate and MRes researcher in crypto-fraud prevention, with hands-on experience in Microsoft 365 security, network segmentation and incident response.">
+    <meta name="keywords"
+        content="Cybersecurity, Portfolio, Research, Saeed Ahmed, Threat Management, Incident Response, Social Engineering, SecOps">
+    <meta name="author" content="Saeed Ahmed">
+    <meta name="robots" content="index, follow">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- Open Graph / Link Previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Saeed Ahmed">
+    <meta property="og:description"
+        content="Cybersecurity graduate and researcher focused on crypto-fraud prevention, threat management, and human factors in security.">
+    <meta property="og:image"
+        content="https://images.credly.com/images/2afcedd4-34eb-4bf8-b657-26ed6cd9f936/standard_PXL_20250715_110517180.jpg">
+    <meta name="twitter:card" content="summary">
+
+    <!-- Google Fonts: Montserrat + Roboto + JetBrains Mono for the terminal feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --dark-background: #141414;
+            --card-background: #1c1c1c;
+            --terminal-bar-bg: #232323;
+            --primary-accent: #1bca32;
+            --accent-glow: rgba(27, 202, 50, 0.35);
+            --light-text: #ffffff;
+            --secondary-text: #cfcfcf;
+            --dim-text: #8b8b8b;
+            --font-family-header: 'Montserrat', sans-serif;
+            --font-family-body: 'Roboto', sans-serif;
+            --font-family-mono: 'JetBrains Mono', monospace;
+            --border-color: #2e2e2e;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-background);
+            color: var(--light-text);
+            font-family: var(--font-family-body);
+            margin: 0;
+            padding: 0;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(27, 202, 50, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(27, 202, 50, 0.03) 0%, transparent 40%),
+                linear-gradient(rgba(18, 18, 18, 0.88), rgba(18, 18, 18, 0.88)), 
+                url('https://pbs.twimg.com/media/FcIQfBbXgAAkaAa?format=jpg&name=4096x4096');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        /* Subtle scanlines effect overlay (toggleable via UI button) */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            background: linear-gradient(
+                rgba(18, 16, 16, 0) 50%, 
+                rgba(0, 0, 0, 0.22) 50%
+            ), linear-gradient(
+                90deg,
+                rgba(255, 0, 0, 0.02),
+                rgba(0, 255, 0, 0.01),
+                rgba(0, 0, 255, 0.02)
+            );
+            background-size: 100% 3px, 6px 100%;
+            opacity: 0.55;
+            transition: opacity 0.3s ease;
+        }
+
+        .scanlines.off {
+            opacity: 0;
+        }
+
+        p, ul, li {
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: var(--secondary-text);
+        }
+
+        /* Top Header */
+        header {
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.9rem 2rem;
+            background-color: rgba(20, 20, 20, 0.94);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .terminal-dot-status {
+            width: 9px;
+            height: 9px;
+            background-color: var(--primary-accent);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px var(--primary-accent);
+            animation: pulseDot 2s infinite ease-in-out;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
+        }
+
+        .site-name {
+            font-family: var(--font-family-mono);
+            color: var(--light-text);
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .site-name .accent {
+            color: var(--primary-accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        main {
+            padding-top: 5.5rem;
+            min-height: 100vh;
+        }
+
+        /* Hero Section with Terminal Shell Window */
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 3.5rem 1.5rem 2.5rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .terminal-window {
+            background-color: rgba(22, 22, 22, 0.94);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(27, 202, 50, 0.08);
+            width: 100%;
+            overflow: hidden;
+            backdrop-filter: blur(8px);
+        }
+
+        /* macOS style window titlebar */
+        .terminal-titlebar {
+            background: var(--terminal-bar-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.55rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: var(--font-family-mono);
+            font-size: 0.8rem;
+            color: var(--dim-text);
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+
+        .terminal-title {
+            color: #9e9e9e;
+            font-size: 0.78rem;
+            letter-spacing: 0.5px;
+        }
+
+        .terminal-body {
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .profile-image-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-image {
+            width: 155px;
+            height: 155px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-accent);
+            box-shadow: 0 0 22px var(--accent-glow);
+            display: block;
+        }
+
+        .profile-badge {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            background: #111;
+            border: 1px solid var(--primary-accent);
+            color: var(--primary-accent);
+            font-family: var(--font-family-mono);
+            font-size: 0.7rem;
+            padding: 2px 7px;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+
+        .prompt-preview {
+            font-family: var(--font-family-mono);
+            color: #8c8c8c;
+            font-size: 0.92rem;
+            margin-bottom: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 0.35rem 0.9rem;
+            border-radius: 4px;
+            border: 1px solid #2b2b2b;
+        }
+
+        .prompt-preview .usr { color: var(--primary-accent); font-weight: 600; }
+        .prompt-preview .path { color: #64b5f6; }
+        .prompt-preview .cmd { color: #fff; }
+
+        .main-title {
+            font-family: var(--font-family-header);
+            color: var(--primary-accent);
+            font-size: clamp(2.3rem, 5vw, 4.2rem);
+            font-weight: 700;
+            margin: 0.3rem 0;
+            text-shadow: 0 0 15px rgba(27, 202, 50, 0.3);
+            letter-spacing: -0.5px;
+        }
+
+        .sub-title {
+            font-family: var(--font-family-mono);
+            font-size: clamp(0.95rem, 2vw, 1.3rem);
+            color: #eaeaea;
+            margin: 0 0 2rem 0;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 9px;
+            height: 1.15em;
+            background-color: var(--primary-accent);
+            margin-left: 5px;
+            vertical-align: -2px;
+            animation: cursorBlink 1s infinite step-start;
+            box-shadow: 0 0 6px var(--primary-accent);
+        }
+
+        @keyframes cursorBlink {
+            0%, 50% { opacity: 1; }
+            50.1%, 100% { opacity: 0; }
+        }
+
+        /* Buttons & Pills */
+        .button-group {
+            display: flex;
+            gap: 0.85rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.4rem;
+            font-family: var(--font-family-mono);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: var(--light-text);
+            background-color: rgba(28, 28, 28, 0.8);
+            border: 1px solid #444;
+            border-radius: 5px;
+            transition: all 0.25s ease-in-out;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: rgba(27, 202, 50, 0.12);
+            border-color: var(--primary-accent);
+            color: var(--primary-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 10px rgba(27, 202, 50, 0.2);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-accent);
+            color: #0b1c0e;
+            border: 1px solid var(--primary-accent);
+            font-weight: 700;
+        }
+
+        .btn-primary:hover {
+            background-color: #24e03e;
+            border-color: #24e03e;
+            color: #000;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .btn-sm {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.78rem;
+        }
+
+        /* Section Layout */
+        .content-section {
+            max-width: 960px;
+            margin: 2.8rem auto;
+            padding: 0;
+            background-color: rgba(24, 24, 24, 0.94);
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: var(--terminal-bar-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.65rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-cmd {
+            font-family: var(--font-family-mono);
+            font-size: 0.88rem;
+            color: #aaa;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-cmd .prompt-user {
+            color: var(--primary-accent);
+            font-weight: bold;
+        }
+
+        .section-content {
+            padding: 2.5rem;
+        }
+
+        .section-content h2 {
+            font-family: var(--font-family-header);
+            color: var(--primary-accent);
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            margin-top: 0;
+            border-bottom: 2px solid rgba(27, 202, 50, 0.3);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.3px;
+        }
+
+        .subsection-title {
+            font-family: var(--font-family-header);
+            color: var(--light-text);
+            font-size: 1.35rem;
+            margin: 2.2rem 0 1rem 0;
+            padding-left: 0.75rem;
+            border-left: 3px solid var(--primary-accent);
+        }
+
+        /* Terminal Project & Info Cards */
+        .project-card {
+            background-color: var(--card-background);
+            padding: 1.8rem;
+            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+            border-left: 4px solid var(--primary-accent);
+            margin-bottom: 1.8rem;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+            transition: border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .project-card:hover {
+            border-color: #3d3d3d;
+            border-left-color: var(--primary-accent);
+            transform: translateY(-2px);
+        }
+
+        .project-card h3 {
+            font-family: var(--font-family-header);
+            color: var(--light-text);
+            font-size: 1.45rem;
+            margin-top: 0;
+            margin-bottom: 0.4rem;
+        }
+
+        .card-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .card-meta img {
+            border-radius: 4px;
+            object-fit: contain;
+            background: #fff;
+            padding: 4px;
+        }
+
+        .card-org {
+            font-family: var(--font-family-mono);
+            font-weight: 700;
+            color: var(--light-text);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .card-status {
+            background-color: rgba(27, 202, 50, 0.12);
+            color: var(--primary-accent);
+            border: 1px solid rgba(27, 202, 50, 0.45);
+            padding: 0.2rem 0.65rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-family: var(--font-family-mono);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-status::before {
+            content: "●";
+            font-size: 0.65rem;
+        }
+
+        .dates {
+            color: var(--dim-text);
+            font-size: 0.85rem;
+            font-family: var(--font-family-mono);
+        }
+
+        .muted {
+            color: #b5b5b5;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .skill-category {
+            background-color: #171717;
+            padding: 1.4rem;
+            border-radius: 6px;
+            border: 1px solid #2b2b2b;
+        }
+
+        .skill-category h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: var(--primary-accent);
+            font-size: 1.05rem;
+            font-family: var(--font-family-mono);
+            letter-spacing: 0.3px;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skills-list li {
+            background-color: rgba(27, 202, 50, 0.08);
+            color: #e5e5e5;
+            border: 1px solid rgba(27, 202, 50, 0.3);
+            padding: 6px 13px;
+            border-radius: 4px;
+            font-size: 0.82rem;
+            font-family: var(--font-family-mono);
+            transition: all 0.2s ease;
+        }
+
+        .skills-list li:hover {
+            background-color: var(--primary-accent);
+            color: #0b1c0e;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(27, 202, 50, 0.35);
+            transform: translateY(-2px);
+        }
+
+        /* Badges */
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 22px;
+            padding: 1.8rem 0;
+        }
+
+        .badge {
+            width: 135px;
+            height: 135px;
+            object-fit: contain;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+        }
+
+        .badge:hover {
+            transform: scale(1.08) translateY(-3px);
+            filter: drop-shadow(0 6px 14px var(--accent-glow));
+        }
+
+        .badge--round {
+            border-radius: 50%;
+        }
+
+        /* Expanders & Academic Tables */
+        details {
+            margin-top: 1rem;
+            background: #181818;
+            border: 1px solid #2a2a2a;
+            border-radius: 6px;
+            padding: 0.5rem;
+        }
+
+        details summary {
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+            list-style: none;
+            font-family: var(--font-family-mono);
+            font-size: 0.9rem;
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .module-year {
+            margin-top: 1rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--primary-accent);
+        }
+
+        .module-year ul {
+            padding-left: 1.2rem;
+        }
+
+        .module-year li strong {
+            color: var(--primary-accent);
+            font-family: var(--font-family-mono);
+        }
+
+        .project-card details table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.2rem;
+            font-size: 0.9rem;
+            font-family: var(--font-family-body);
+        }
+
+        .project-card details table td {
+            padding: 0.75rem 0.6rem;
+            border-bottom: 1px solid #292929;
+            color: var(--secondary-text);
+            overflow-wrap: break-word;
+        }
+
+        .project-card details table td a {
+            color: var(--primary-accent);
+            text-decoration: none;
+            font-family: var(--font-family-mono);
+            font-size: 0.85rem;
+        }
+
+        .project-card details table td a:hover {
+            text-decoration: underline;
+        }
+
+        /* Embeds & Media */
+        .embed-container {
+            position: relative;
+            padding-bottom: 60%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 6px;
+            margin-top: 1rem;
+            border: 1px solid #333;
+        }
+
+        .embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .photography-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .photography-grid iframe {
+            width: 100%;
+            height: 316px;
+            border: 1px solid #333;
+            border-radius: 6px;
+        }
+
+        /* Bookshelf */
+        .gr_grid_container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .gr_grid_book_container {
+            flex: 1 1 130px;
+            max-width: 140px;
+            text-align: center;
+        }
+
+        .gr_grid_book_container img {
+            width: 120px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+            border: 1px solid #333;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .gr_grid_book_container img:hover {
+            transform: scale(1.05);
+            border-color: var(--primary-accent);
+        }
+
+        .gr_grid_book_title {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            color: var(--light-text);
+            font-weight: bold;
+        }
+
+        .gr_grid_book_author, .gr_grid_book_rating {
+            font-size: 0.8rem;
+            color: #999;
+            font-family: var(--font-family-mono);
+        }
+
+        /* Terminal-styled Contact Form */
+        .terminal-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-top: 1.2rem;
+            background: #171717;
+            padding: 1.8rem;
+            border-radius: 6px;
+            border: 1px solid #2d2d2d;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-label {
+            font-family: var(--font-family-mono);
+            font-size: 0.88rem;
+            color: var(--primary-accent);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .terminal-form input, .terminal-form textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            background-color: #0e0e0e;
+            border: 1px solid #333;
+            border-radius: 4px;
+            color: var(--light-text);
+            font-family: var(--font-family-mono);
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+        }
+
+        .terminal-form input:focus, .terminal-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-accent);
+            box-shadow: 0 0 10px rgba(27, 202, 50, 0.3);
+            background-color: #121212;
+        }
+
+        /* Callout notification container */
+        .notice-box {
+            background-color: rgba(27, 202, 50, 0.05);
+            border: 1px dashed rgba(27, 202, 50, 0.4);
+            border-radius: 6px;
+            padding: 1rem 1.2rem;
+            margin: 1.2rem 0;
+            font-family: var(--font-family-mono);
+            font-size: 0.9rem;
+            color: #d1d1d1;
+        }
+
+        /* Footer */
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 3rem 1rem;
+            font-size: 0.88rem;
+            color: #8c8c8c;
+            background-color: rgba(16, 16, 16, 0.96);
+            border-top: 1px solid #282828;
+            font-family: var(--font-family-mono);
+        }
+
+        .footer-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 1rem;
+            padding: 3px 12px;
+            border-radius: 20px;
+            background: #202020;
+            border: 1px solid #333;
+            font-size: 0.78rem;
+        }
+
+        @media (max-width: 860px) {
+            header {
+                flex-direction: column;
+                gap: 0.8rem;
+                padding: 1rem;
+            }
+            main {
+                padding-top: 8rem;
+            }
+            .section-content {
+                padding: 1.8rem 1.2rem;
+            }
+            .terminal-body {
+                padding: 2rem 1.2rem;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Saeed Ahmed",
+      "jobTitle": "Cybersecurity Specialist & Researcher",
+      "alumniOf": "University of South Wales",
+      "sameAs": [
+        "https://www.linkedin.com/in/saeedahmed40",
+        "https://github.com/saeedahmed40",
+        "https://orcid.org/0009-0003-0613-4368",
+        "https://www.credly.com/users/saeedahmed40/badges",
+        "https://www.researchgate.net/profile/Mohammed-Saeed-Ahmed-2"
+      ]
+    }
+    </script>
 </head>
-<body>
 
-  <!-- Terminal Frame Container -->
-  <div class="terminal-shell">
-    
-    <!-- Header / Window Title Bar -->
-    <header class="terminal-titlebar">
-      <div class="window-controls" aria-hidden="true">
-        <span class="control-dot close"></span>
-        <span class="control-dot minimize"></span>
-        <span class="control-dot maximize"></span>
-      </div>
-      <div class="window-title">saeed@secops-terminal: ~/portfolio (sh)</div>
+<body>
+    <!-- Subtle Retro Scanlines Layer -->
+    <div class="scanlines" id="scanlineLayer" aria-hidden="true"></div>
+
+    <!-- Fixed Header -->
+    <header>
+        <div class="header-brand">
+            <span class="terminal-dot-status" title="SOC System Online"></span>
+            <span class="site-name">Saeed<span class="accent">:~$</span></span>
+        </div>
+        <nav class="nav-links" aria-label="Main Terminal Navigation">
+            <a href="#home" class="btn btn-sm">_home</a>
+            <a href="#about" class="btn btn-sm">_about</a>
+            <a href="#skills" class="btn btn-sm">_skills</a>
+            <a href="#education" class="btn btn-sm">_education</a>
+            <a href="#credentials" class="btn btn-sm">_certs</a>
+            <a href="#experience" class="btn btn-sm">_experience</a>
+            <a href="#research" class="btn btn-sm">_research</a>
+            <a href="#lecture" class="btn btn-sm">_lecture</a>
+            <a href="#courses" class="btn btn-sm">_courses</a>
+            <a href="#hobbies" class="btn btn-sm">_hobbies</a>
+            <a href="#contact" class="btn btn-sm btn-primary">_contact</a>
+        </nav>
     </header>
 
-    <!-- Top Navigation Anchor Bar -->
-    <nav class="terminal-nav" aria-label="Main Navigation">
-      <a href="#about" class="nav-item">[01:about]</a>
-      <a href="#skills" class="nav-item">[02:skills]</a>
-      <a href="#experience" class="nav-item">[03:experience]</a>
-      <a href="#research" class="nav-item">[04:research]</a>
-      <a href="#projects" class="nav-item">[05:projects]</a>
-      <a href="#credentials" class="nav-item">[06:credentials]</a>
-      <a href="#education" class="nav-item">[07:education]</a>
-      <a href="#contact" class="nav-item">[08:contact]</a>
-    </nav>
+    <main>
+        <!-- Hero Section with Shell Window -->
+        <section class="hero-section" id="home">
+            <div class="terminal-window">
+                <div class="terminal-titlebar">
+                    <div class="terminal-dots">
+                        <span class="dot dot-red"></span>
+                        <span class="dot dot-yellow"></span>
+                        <span class="dot dot-green"></span>
+                    </div>
+                    <span class="terminal-title">bash — Saeed: ~/identity</span>
+                    <button id="toggleCrtBtn" class="btn btn-sm" style="padding: 2px 8px; font-size: 0.7rem;" title="Toggle CRT scanlines">CRT: ON</button>
+                </div>
 
-    <main class="terminal-body">
+                <div class="terminal-body">
+                    <div class="profile-image-container">
+                        <img class="profile-image"
+                            src="https://images.credly.com/images/2afcedd4-34eb-4bf8-b657-26ed6cd9f936/standard_PXL_20250715_110517180.jpg"
+                            alt="Saeed Ahmed" width="155" height="155">
+                        <span class="profile-badge">SEC://P1</span>
+                    </div>
 
-      <!-- Section: Executive Summary -->
-      <section id="about" class="terminal-section">
-        <div class="cli-prompt">
-          <span class="prompt-user">saeed@secops-terminal</span>:<span class="prompt-dir">~</span>$ <span class="prompt-cmd">whoami --verbose</span>
-        </div>
+                    <div class="prompt-preview">
+                        <span class="usr">Saeed</span>:<span class="path">~</span>$ <span class="cmd">whoami</span>
+                    </div>
 
-        <div class="hero-layout">
-          <div class="profile-sidebar">
-            <img src="your-profile-image.jpg" alt="Saeed Ahmed" class="profile-photo" />
-            <div class="status-badge">
-              <span class="status-pulse"></span> ROLE: ACTIVE CYBER DEFENSE
+                    <h1 class="main-title">Saeed Ahmed</h1>
+                    <p class="sub-title">Cybersecurity Specialist & Researcher<span class="cursor"></span></p>
+
+                    <div class="button-group">
+                        <a href="https://www.linkedin.com/in/saeedahmed40" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                            Connect on LinkedIn
+                        </a>
+                        <a href="#contact" class="btn">./send_message.sh</a>
+                        <a href="#research" class="btn">cat research_papers.log</a>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <div class="profile-details">
-            <h1 class="profile-name">Saeed Ahmed, MBCS</h1>
-            <p class="profile-headline">IT Cybersecurity Officer &amp; Applied Security Researcher</p>
-            
-            <p class="profile-bio">
-              Applied cybersecurity professional with demonstrated experience across enterprise security operations, Zero Trust identity architectures, and regulatory governance (ISO/IEC 27001 &amp; Cyber Essentials). Currently serving as IT Cybersecurity Officer within a regulated financial setting and executing postgraduate research at the University of South Wales[cite: 1]. Author of the peer-reviewed <strong>Crypto Scam Assessment &amp; Mitigation (CSAM)</strong> framework, bridging technical controls with cognitive human defense[cite: 1].
-            </p>
-
-            <div class="cta-actions">
-              <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" class="cli-button">
-                <i class="fab fa-linkedin"></i> LinkedIn
-              </a>
-              <a href="https://github.com/saeedahmed40" target="_blank" rel="noopener noreferrer" class="cli-button">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-              <a href="#contact" class="cli-button cli-button-primary">
-                <i class="fas fa-envelope"></i> Contact Direct
-              </a>
+        <!-- About Section -->
+        <section class="content-section" id="about">
+            <div class="section-header">
+                <div class="section-cmd">
+                    <span class="prompt-user">Saeed</span>:~$ <span>cat profile_summary.md</span>
+                </div>
+                <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
             </div>
-          </div>
+            <div class="section-content">
+                <h2>About Me</h2>
+                <p>First Class Cybersecurity graduate (University of South Wales), now researching crypto-fraud prevention
+                    at MRes level. I combine four years of IT support experience with hands-on security work in
+                    Microsoft 365, network segmentation and ISO/IEC 27001 alignment, and I present research on the human
+                    side of security at international conferences.</p>
+
+                <h3 class="subsection-title">Professional Memberships</h3>
+                <p>I am a member of the British Computer Society (BCS), adhering strictly to its professional code of conduct.</p>
+                <div class="badge-container">
+                    <a href="https://www.bcs.org/membership-and-registrations/become-a-member/bcs-code-of-conduct"
+                        target="_blank" rel="noopener noreferrer">
+                        <img class="badge badge--round"
+                            src="https://bcs.digitalmembership.co.uk/resources/img/pin-rittech-member.jpg"
+                            alt="BCS Student Member badge" width="135" height="135" loading="lazy">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="content-section" id="skills">
+            <div class="section-header">
+                <div class="section-cmd">
+                    <span class="prompt-user">Saeed</span>:~$ <span>./inspect_capabilities --verbose</span>
+                </div>
+                <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+            </div>
+            <div class="section-content">
+                <h2>Skills & Expertise</h2>
+                <p>Core security capabilities, technical defensive tools, and compliance frameworks verified in operational environments.</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>[01] SecOps & Threat Defense</h3>
+                        <ul class="skills-list">
+                            <li>Incident Response</li>
+                            <li>SIEM & Event Monitoring</li>
+                            <li>Threat Detection</li>
+                            <li>Vulnerability Scanning</li>
+                            <li>Penetration Testing</li>
+                            <li>Malware Analysis</li>
+                            <li>Network Segmentation</li>
+                            <li>Social Engineering</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>[02] Governance, Risk & Identity</h3>
+                        <ul class="skills-list">
+                            <li>Risk Assessment</li>
+                            <li>ISO/IEC 27001</li>
+                            <li>Cyber Essentials</li>
+                            <li>Security Policies</li>
+                            <li>Identity & Access (IAM)</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>[03] Cloud & Infrastructure</h3>
+                        <ul class="skills-list">
+                            <li>Microsoft 365 Security</li>
+                            <li>Cloud Security (GCP)</li>
+                            <li>Linux SysAdmin</li>
+                            <li>Python Scripting</li>
+                            <li>Snort IDS/IPS</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>[04] Analytical & Research</h3>
+                        <ul class="skills-list">
+                            <li>Analytical Reasoning</li>
+                            <li>Incident Reporting</li>
+                            <li>Academic Methodology</li>
+                            <li>OSINT Investigation</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="muted"><strong>$ sys_env:</strong> Zero Trust Architecture, Data Security, Authentication Frameworks, Breach Post-Mortems, Network Hardening, IoT Security.</p>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="content-section" id="education">
+            <div class="section-header">
+                <div class="section-cmd">
+                    <span class="prompt-user">Saeed</span>:~$ <span>tail -n 3 education_history.log</span>
+                </div>
+                <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+            </div>
+            <div class="section-content">
+                <h2>Education</h2>
+
+                <article class="project-card">
+                    <h3>Masters by Research in Cybersecurity</h3>
+                    <div class="card-meta">
+                        <img src="https://ctmmind.org.uk/wp-content/uploads/2019/07/USW-logo.jpg"
+                            alt="University of South Wales logo" height="46" loading="lazy">
+                        <p class="card-org">University of South Wales</p>
+                        <span class="card-status">IN_PROGRESS</span>
+                        <span class="dates">[2025 - Present]</span>
+                    </div>
+                    <p class="muted"><strong>Award Date:</strong> TBD</p>
+                    <p>Year-long independent research project developing a comprehensive crypto-fraud prevention framework, involving self-directed empirical investigation, data synthesis and behavioural analysis.</p>
+                </article>
+
+                <article class="project-card">
+                    <h3>BSc (Hons) Applied Cybersecurity</h3>
+                    <div class="card-meta">
+                        <img src="https://ctmmind.org.uk/wp-content/uploads/2019/07/USW-logo.jpg"
+                            alt="University of South Wales logo" height="46" loading="lazy">
+                        <p class="card-org">University of South Wales</p>
+                        <span class="card-status">COMPLETED</span>
+                        <span class="dates">[2022 - 2025]</span>
+                    </div>
+                    <p class="muted"><strong>Award Date:</strong> 17 June 2025</p>
+                    <p class="muted"><strong>Final Grade:</strong> First Class Honours</p>
+                    <p>A hands-on degree covering network security, cryptography, ethical hacking, digital forensics, incident management and risk mitigation.</p>
+                    <details class="module-breakdown">
+                        <summary class="btn btn-sm">cat modules_level6.txt</summary>
+                        <div class="module-year">
+                            <h4 style="font-family: var(--font-family-mono); color: #fff;">Final Year (2024/2025) – Level 6</h4>
+                            <ul>
+                                <li>Secure Operations And Incident Management (IY3U001) <span><strong>76%</strong></span></li>
+                                <li>Security Operations & Penetration Testing (IY3D607) <span><strong>75%</strong></span></li>
+                                <li>Cyber Dissertation Project (IY3D610) <span><strong>68%</strong></span></li>
+                                <li>Cyber Professional In Practice (IY3H001) <span><strong>58%</strong></span></li>
+                            </ul>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="project-card">
+                    <h3>BTEC Level 3 Extended Diploma in Computing</h3>
+                    <div class="card-meta">
+                        <img src="https://yt3.googleusercontent.com/g2Sd-JQA8fsoA8zNk1PdRv3OmTYXgr9F8HQjK9N1G29vFZLTE-Mkyz4IuzkjR2am16pu0BOQ=s900-c-k-c0x00ffffff-no-rj"
+                            alt="Coleg Gwent logo" height="46" loading="lazy">
+                        <p class="card-org">Coleg Gwent</p>
+                        <span class="card-status">COMPLETED</span>
+                        <span class="dates">[2020 - 2022]</span>
+                    </div>
+                    <p class="muted"><strong>Final Grade:</strong> DMM (equivalent to 3 A-Levels)</p>
+                    <details class="module-breakdown">
+                        <summary class="btn btn-sm">cat btec_breakdown.txt</summary>
+                        <div class="module-year">
+                            <h4 style="font-family: var(--font-family-mono); color: #fff;">Distinction</h4>
+                            <ul>
+                                <li>Business Applications of Social Media</li>
+                                <li>The Impact of Computing</li>
+                            </ul>
+                            <h4 style="font-family: var(--font-family-mono); color: #fff;">Merit</h4>
+                            <ul>
+                                <li>Principles of Computer Science</li>
+                                <li>Fundamentals of Computer Systems</li>
+                                <li>IT Systems Security and Encryption</li>
+                                <li>Digital Graphics and Animation</li>
+                                <li>Website Development</li>
+                                <li>Relational Database Development</li>
+                                <li>Systems Analysis and Design</li>
+                            </ul>
+                            <h4 style="font-family: var(--font-family-mono); color: #fff;">Pass</h4>
+                            <ul>
+                                <li>Planning and Management of Computing Projects</li>
+                                <li>Computer Networking</li>
+                                <li>Systems Methodology</li>
+                            </ul>
+                        </div>
+                    </details>
+                </article>
+            </div>
+        </section>
+
+        <!-- Credentials Section -->
+        <section class="content-section" id="credentials">
+            <div class="section-header">
+                <div class="section-cmd">
+                    <span class="prompt-user">Saeed</span>:~$ <span>credly-cli --verify --all</span>
+                </div>
+                <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+            </div>
+            <div class="section-content">
+                <h2>Credentials & Certifications</h2>
+                <p>Digital badges and certifications demonstrating defensive capability, systems administration, and ethical hacking.</p>
+                
+                <div class="badge-container">
+                    <a href="https://www.credly.com/earner/earned/badge/84a37d90-ded7-4f18-982e-9a4d6dc2639f" target="_blank" rel="noopener noreferrer">
+                        <img class="badge" src="https://images.credly.com/size/340x340/images/8630f885-621e-420a-bdb5-11fe53d1caf6/image.png" alt="Google Cybersecurity and CompTIA Security+ dual badge" loading="lazy">
+                    </a>
+                    <a href="https://www.credly.com/badges/6cd1ca2a-05c0-4ad3-a334-e3c6eebe14db" target="_blank" rel="noopener noreferrer">
+                        <img class="badge" src="https://images.credly.com/size/340x340/images/80d8a06a-c384-42bf-ad36-db81bce5adce/blob" alt="CompTIA Security+ badge" loading="lazy">
+                    </a>
+                    <a href="https://www.credly.com/badges/fb61f0e9-ffa3-442f-b861-713a808a6c09" target="_blank" rel="noopener noreferrer">
+                        <img class="badge" src="https://images.credly.com/size/680x680/images/505080ad-3731-4b1d-98df-347655a45750/image.png" alt="Google Cloud Cybersecurity Certificate badge" loading="lazy">
+                    </a>
+                    <a href="https://www.credly.com/badges/be87d0ad-02c3-4d14-ae5d-7b3d8cc301c2" target="_blank" rel="noopener noreferrer">
+                        <img class="badge" src="https://images.credly.com/size/680x680/images/0bf0f2da-a699-4c82-82e2-56dcf1f2e1c7/image.png" alt="Google Cybersecurity Professional Certificate badge" loading="lazy">
+                    </a>
+                    <a href="https://www.credly.com/badges/c2a58f47-b8d8-40aa-9774-2ca92ab4ade9" target="_blank" rel="noopener noreferrer">
+                        <img class="badge" src="https://images.credly.com/size/680x680/images/ae2f5bae-b110-4ea1-8e26-77cf5f76c81e/GCC_badge_IT_Support_1000x1000.png" alt="Google IT Support badge" loading="lazy">
+                    </a>
+                    <a href="https://www.credly.com/badges/d28ebef8-429f-48ea-8ed0-e67a1cbfae9f" target="_blank" rel="noopener noreferrer">
+                        <img class="badge" src="https://images.credly.com/size/680x680/images/242902b5-f527-42ad-865e-977c9e1b5b58/image.png" alt="Cisco Ethical Hacker badge" loading="lazy">
+                    </a>
+                    <a href="https://www.credly.com/badges/e107af8a-f34d-4fc8-badd-4f223ed0ee98" target="_blank" rel="noopener noreferrer">
+                        <img class="badge" src="https://images.credly.com/size/680x680/images/53f37f83-04a1-4935-9b1e-21a99cc6e1b2/CyberOpsAssoc.png" alt="Cisco CyberOps Associate badge" loading="lazy">
+                    </a>
+                    <a href="https://www.credly.com/users/saeedahmed40/badges" target="_blank" rel="noopener noreferrer">
+                        <img class="badge" src="https://images.credly.com/size/680x680/images/a850079a-75bb-41e1-adae-dedfabcf597c/Professional_Certificate_-_IBM_Cybersecurity_Analyst.png" alt="IBM Cybersecurity Analyst badge" loading="lazy">
+                    </a>
+                    <a href="https://www.credly.com/users/saeedahmed40/badges#other" target="_blank" rel="noopener noreferrer">
+                        <img class="badge" src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/122222083" alt="ChromeOS Admin badge" loading="lazy">
+                    </a>
+                    <a href="https://www.credly.com/users/saeedahmed40/badges#other" target="_blank" rel="noopener noreferrer">
+                        <img class="badge" src="https://vbeventstorage.blob.core.windows.net/cert-czhurdjzznvg960s-xhpm/openbadges/badges/bd95ea60-7857-470c-9b7c-46da8b761571.png" alt="BCS Ethical IT badge" loading="lazy">
+                    </a>
+                </div>
+                <div style="text-align: center;">
+                    <a href="https://www.credly.com/users/saeedahmed40/badges" class="btn btn-primary" target="_blank" rel="noopener noreferrer">credly://view_full_transcript</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section class="content-section" id="experience">
+            <div class="section-header">
+                <div class="section-cmd">
+                    <span class="prompt-user">Saeed</span>:~$ <span>service --status-all experience</span>
+                </div>
+                <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+            </div>
+            <div class="section-content">
+                <h2>Professional Experience</h2>
+
+                <article class="project-card">
+                    <h3>IT Cybersecurity Officer</h3>
+                    <div class="card-meta">
+                        <img src="https://mortgageadviser.directory/wp-content/uploads/2024/06/mortgage-lane.jpg" alt="Mortgage Lane logo" height="46" loading="lazy">
+                        <p class="card-org">Mortgage Lane</p>
+                        <span class="card-status">ACTIVE_ENGAGEMENT</span>
+                        <span class="dates">[May 2026 - Present]</span>
+                    </div>
+                    <ul class="muted">
+                        <li>Designed and implemented least-privilege user access controls within Microsoft 365.</li>
+                        <li>Audited network topology and deployed VLAN segmentation rules via Omada systems to isolate critical nodes.</li>
+                        <li>Established centralized endpoint patch management schedules to sustain zero-day resilience.</li>
+                        <li>Hardened corporate routers, managed switches, and Wi-Fi access infrastructure against lateral movement.</li>
+                        <li>Mapped internal policies, incident procedures, and controls to Cyber Essentials and ISO/IEC 27001 standards.</li>
+                    </ul>
+                </article>
+
+                <article class="project-card">
+                    <h3>Hourly Paid Lecturer</h3>
+                    <div class="card-meta">
+                        <img src="https://ctmmind.org.uk/wp-content/uploads/2019/07/USW-logo.jpg" alt="University of South Wales logo" height="46" loading="lazy">
+                        <p class="card-org">University of South Wales</p>
+                        <span class="card-status">ACTIVE_FACULTY</span>
+                        <span class="dates">[February 2026 - Present]</span>
+                    </div>
+                    <ul class="muted">
+                        <li>Deliver multi-modal lectures and lab practicals in cybersecurity and systems management.</li>
+                        <li>Assess coursework and deliver actionable technical feedback to foster analytical growth.</li>
+                        <li>Update lab environments and instructional materials against evolving industry threats.</li>
+                    </ul>
+                </article>
+
+                <article class="project-card">
+                    <h3>Customer Assistant</h3>
+                    <div class="card-meta">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/B%26Q_company_logo.svg" alt="B&amp;Q logo" height="36" loading="lazy">
+                        <p class="card-org">B&amp;Q</p>
+                        <span class="dates">[July 2021 - May 2026]</span>
+                    </div>
+                    <ul class="muted">
+                        <li>Delivered high-volume customer service, conflict de-escalation, and accurate transactional duties.</li>
+                    </ul>
+                </article>
+
+                <article class="project-card">
+                    <h3>IT Support Technician (Volunteer)</h3>
+                    <div class="card-meta">
+                        <img src="https://www.clwbffoto.com/wp-content/uploads/go-x/u/904810ba-c463-4b81-a32e-a1eef90edc73/image-455x455.jpg" alt="Clwb Ffoto logo" height="46" loading="lazy">
+                        <p class="card-org">Clwb Ffoto &amp; Ffoto Newport</p>
+                        <span class="dates">[2022 - Present]</span>
+                    </div>
+                    <ul class="muted">
+                        <li>Provide direct technical desktop support, endpoint software deployment, and network uptime maintenance.</li>
+                    </ul>
+                </article>
+
+                <article class="project-card">
+                    <h3>Cyber Clinic & Open-Day Volunteer</h3>
+                    <div class="card-meta">
+                        <img src="https://ctmmind.org.uk/wp-content/uploads/2019/07/USW-logo.jpg" alt="University of South Wales logo" height="46" loading="lazy">
+                        <p class="card-org">University of South Wales</p>
+                        <span class="dates">[2022 - 2025]</span>
+                    </div>
+                    <ul class="muted">
+                        <li>Conducted OSINT exercises and defensive security workshops for visiting secondary school cohorts.</li>
+                        <li>Advised public members on credential hygiene, password managers, and anti-phishing defense.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- Research & Projects Section -->
+        <section class="content-section" id="research">
+            <div class="section-header">
+                <div class="section-cmd">
+                    <span class="prompt-user">Saeed</span>:~$ <span>./run_research_index.py</span>
+                </div>
+                <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+            </div>
+            <div class="section-content">
+                <h2>Research & Case Studies</h2>
+                <p>Peer-reviewed output, technical breach post-mortems, and investigations into threat engineering.</p>
+
+                <article class="project-card">
+                    <h3>Feast on the Desperate: An Analysis of Social Engineering Attacks</h3>
+                    <p class="muted">Release Date: <time datetime="2025-08-15">15/08/2025</time></p>
+                    <p><strong>The Challenge:</strong> This paper addresses the escalating threat of cryptocurrency fraud by examining the psychological levers and parasocial engineering vectors exploited by threat syndicates.</p>
+                    <p><strong>Methodology & Analysis:</strong> Synthesizes real victim testimonies with the SCAMS Checklist, the I-PACE model, and parasocial relationship psychology to design an integrated prevention blueprint.</p>
+                    <div class="button-group" style="justify-content: flex-start;">
+                        <a href="#lecture" class="btn btn-primary">Lecture Overview &amp; Citations</a>
+                        <a href="https://pure.southwales.ac.uk/en/activities/8th-international-conference-on-emerging-technologies-in-computin" class="btn" target="_blank" rel="noopener noreferrer">Conference Paper</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3>Ray of Hope for the Desperate</h3>
+                    <p><span class="card-status">RESEARCH_IN_PROGRESS</span></p>
+                    <p>Builds directly on <em>Feast on the Desperate</em>, examining parasocial trust dynamics in scam victimisation and constructing end-user mitigations to break high-pressure fraudulent conversion funnels.</p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Metaverse & Exposure of Children to the Dark Corners of the Internet</h3>
+                    <p><span class="card-status">RESEARCH_IN_PROGRESS</span></p>
+                    <p>Investigates immersive social VR architectures (such as VRChat), identifying unmoderated communication channels, groomer mechanics, simulated violence vectors, and architectural policy mitigations.</p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Cyber Drill: Incident Investigation of a Compromised System</h3>
+                    <p class="muted">Published: 28/04/2025</p>
+                    <p>Full incident response investigation for FCB Bank PLC: attack reconnaissance, persistence mechanisms, lateral pivot isolation, volatile memory capture, and legal/regulatory disclosure.</p>
+                    <a href="https://saeedahmed40.medium.com/cyber-drill-incident-investigation-of-a-compromised-system-dfeab80a61bf" class="btn" target="_blank" rel="noopener noreferrer">Read Incident Report</a>
+                </article>
+
+                <article class="project-card">
+                    <h3>Code Red for Healthcare: Why the NHS is Losing the War on Ransomware</h3>
+                    <p>An architectural analysis arguing for modern secure-by-design operating foundations and Zero Trust segmentation (exemplified by ChromeOS) to minimize medical endpoint attack surfaces.</p>
+                    <a href="https://saeedahmed40.medium.com/code-red-for-healthcare-the-ransomware-epidemic-the-risk-to-life-e68976a19857" class="btn" target="_blank" rel="noopener noreferrer">Read Whitepaper</a>
+                </article>
+
+                <article class="project-card">
+                    <h3>Snort Challenge - Live Attack Analysis</h3>
+                    <p>Configured live custom rules and signatures using the Snort IDS/IPS engine to detect and terminate external brute-force vectors and an active internal reverse shell payload.</p>
+                    <a href="https://saeedahmed40.medium.com/snort-challenge-live-attack-6bdefc5448da" class="btn" target="_blank" rel="noopener noreferrer">Read Lab Report</a>
+                </article>
+
+                <article class="project-card">
+                    <h3>Substack Feed & Field Notes</h3>
+                    <p class="muted">Live articles on cybersecurity trends and cyberpsychology</p>
+                    <div class="embed-container">
+                        <iframe src="https://saeedahmed40.substack.com/embed" title="Articles on Substack" loading="lazy"></iframe>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Lecture & Academic References Section -->
+        <section class="content-section" id="lecture">
+            <div class="section-header">
+                <div class="section-cmd">
+                    <span class="prompt-user">Saeed</span>:~$ <span>cat ./feast_on_the_desperate_lecture_notes.md</span>
+                </div>
+                <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+            </div>
+            <div class="section-content">
+                <h2>Feast on the Desperate - Lecture</h2>
+                <p>This presentation represents the core themes explored in my research paper <em>"Feast on the Desperate: An Analysis of Social Engineering Attacks Exploiting Human Vulnerabilities"</em>. It highlights the psychological tactics used by attackers to manipulate individuals and the importance of awareness and targeted education in combating these threats.</p>
+
+                <div class="notice-box">
+                    <strong>[STATUS]</strong> Academic lecture presentation presented at the 8th International Conference on Emerging Technologies in Computing. Full proceedings and slide decks are accessible via the links below.
+                </div>
+
+                <article class="project-card">
+                    <div class="button-group" style="justify-content: flex-start; margin-bottom: 1.5rem;">
+                        <a href="https://pure.southwales.ac.uk/en/activities/8th-international-conference-on-emerging-technologies-in-computin" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Conference Presentation</a>
+                        <a href="#research" class="btn">Return to Research</a>
+                    </div>
+
+                    <details>
+                        <summary class="btn btn-sm">cat academic_references.bib</summary>
+                        <table>
+                            <tbody>
+                                <tr><td>Acharya, B. et al. (2024) 'Conning the Crypto Conman: End-to-End Analysis of Cryptocurrency-Based Technical Support Scams'. Available at: <a href="https://arxiv.org/abs/2401.09824" target="_blank">https://arxiv.org/abs/2401.09824</a>.</td></tr>
+                                <tr><td>Action Fraud (n.d.) Advance Fee Fraud | Action Fraud. Available at: <a href="https://www.actionfraud.police.uk/a-z-of-fraud/advance-fee-fraud" target="_blank">https://www.actionfraud.police.uk/a-z-of-fraud/advance-fee-fraud</a>.</td></tr>
+                                <tr><td>Akbari, M. et al. (2021) 'Fear of Missing out (FoMO) and Internet Use: A Comprehensive Systematic Review and Meta-Analysis', Journal of Behavioral Addictions, 10, 879–900.</td></tr>
+                                <tr><td>Allyn, B. (2023) 'He Lost $340,000 to a Crypto Scam. Such Cases Are on the Rise', NPR, 25 June.</td></tr>
+                                <tr><td>Antonopoulos, A.M. (2017) Mastering Bitcoin: Unlocking digital cryptocurrencies. 2nd edn. Sebastopol: O'Reilly Media.</td></tr>
+                                <tr><td>Balaban, D.C. et al. (2022) 'Parasocial Relations and Social Media Influencers’ Persuasive Power', Acta Psychologica, 230, 103731.</td></tr>
+                                <tr><td>Bartoletti, M. et al. (2021) 'Cryptocurrency Scams: Analysis and Perspectives', IEEE Access, 9, 148353–148373.</td></tr>
+                                <tr><td>BBC Eye Investigation (2023) The Pig Butchering Romance Scam, 3 March.</td></tr>
+                                <tr><td>Brand, M. et al. (2019) 'The Interaction of Person-Affect-Cognition-Execution (I-PACE) Model for Addictive Behaviors', Neuroscience & Biobehavioral Reviews.</td></tr>
+                                <tr><td>Chainalysis (2025) Crypto Crime Trends: Illicit Activity Down as Scamming and Stolen Funds Fall.</td></tr>
+                                <tr><td>Cruz, B. (2024) The Pig Butchering Scam Explained | Security.Org.</td></tr>
+                                <tr><td>Dove, M. (2020) The Psychology of Fraud, Persuasion and Scam Techniques: Understanding What Makes Us Vulnerable. Routledge.</td></tr>
+                                <tr><td>Nakamoto, S. (2008) Bitcoin: A peer-to-peer electronic cash system. Available at: <a href="https://bitcoin.org/bitcoin.pdf" target="_blank">https://bitcoin.org/bitcoin.pdf</a>.</td></tr>
+                                <tr><td>Salahdine, F. & Kaabouch, N. (2019) 'Social Engineering Attacks: A Survey', Future Internet, 11, 89.</td></tr>
+                                <tr><td>Trozze, A. et al. (2022) 'Cryptocurrencies and Future Financial Crime', Crime Science, 11.</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </article>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section class="content-section" id="courses">
+            <div class="section-header">
+                <div class="section-cmd">
+                    <span class="prompt-user">Saeed</span>:~$ <span>cat ./course_syllabus.txt</span>
+                </div>
+                <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+            </div>
+            <div class="section-content">
+                <h2>Educational Courses & Material</h2>
+                <div class="project-card">
+                    <h3>Understanding What's Needed For Cybersecurity</h3>
+                    <p>A structured foundational course providing practical understanding of fundamental cybersecurity principles, core threat models, defensive architectures, and real-world SecOps operations.</p>
+                    
+                    <details>
+                        <summary class="btn btn-sm">cat course_modules.md</summary>
+                        <div class="module-year">
+                            <h4 style="font-family: var(--font-family-mono); color: #fff;">Curriculum Highlights</h4>
+                            <ul>
+                                <li><strong>Core Concepts:</strong> The CIA Triad, threat actor taxonomy, and attack vector classification.</li>
+                                <li><strong>Network Defense:</strong> Subnetting, firewall configuration, perimeter isolation, and DMZ design.</li>
+                                <li><strong>SecOps Fundamentals:</strong> SIEM monitoring, log inspection, and anomaly detection fundamentals.</li>
+                                <li><strong>Human Factors:</strong> Psychological social engineering mechanisms, pretexting, and credential awareness.</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section class="content-section" id="hobbies">
+            <div class="section-header">
+                <div class="section-cmd">
+                    <span class="prompt-user">Saeed</span>:~$ <span>ls -la ~/creative_pursuits</span>
+                </div>
+                <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+            </div>
+            <div class="section-content">
+                <h2>Hobbies & Creative Pursuits</h2>
+                
+                <div class="project-card">
+                    <h3>Photography</h3>
+                    <p class="muted">Visual documentation and photography portfolios hosted on Behance.</p>
+                    <div class="photography-grid">
+                        <iframe src="https://www.behance.net/embed/project/134378837?ilo0=1" title="Behance Project 1" loading="lazy"></iframe>
+                        <iframe src="https://www.behance.net/embed/project/148584521?ilo0=1" title="Behance Project 2" loading="lazy"></iframe>
+                        <iframe src="https://www.behance.net/embed/project/149899349?ilo0=1" title="Behance Project 3" loading="lazy"></iframe>
+                        <iframe src="https://www.behance.net/embed/project/175920107?ilo0=1" title="Behance Project 4" loading="lazy"></iframe>
+                        <iframe src="https://www.behance.net/embed/project/176058865?ilo0=1" title="Behance Project 5" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Reading Bookshelf</h3>
+                    <p class="muted">Selected readings spanning cybersecurity history, financial dynamics, and iconic manga.</p>
+                    
+                    <div class="gr_grid_container">
+                        <div class="gr_grid_book_container">
+                            <a href="https://www.google.co.uk/books/edition/Dragon_Ball_Vol_1/RXnwAQAAQBAJ?hl=en&gbpv=0" target="_blank" rel="noopener noreferrer">
+                                <img src="https://m.media-amazon.com/images/I/71cYlQbQHvL._UF894,1000_QL80_.jpg" alt="Dragon Ball Vol 1">
+                            </a>
+                            <div class="gr_grid_book_title">Dragon Ball, Vol. 1</div>
+                            <div class="gr_grid_book_author">Akira Toriyama</div>
+                            <div class="gr_grid_book_rating">Rating: 4.8</div>
+                        </div>
+                        
+                        <div class="gr_grid_book_container">
+                            <a href="https://www.google.co.uk/books/edition/Dragon_Ball_Z_Vol_17/8W3wAQAAQBAJ?hl=en&gbpv=0" target="_blank" rel="noopener noreferrer">
+                                <img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781591165057/dragon-ball-z-vol-17-9781591165057_lg.jpg" alt="Dragon Ball Z Vol 17">
+                            </a>
+                            <div class="gr_grid_book_title">Dragon Ball Z, Vol. 17</div>
+                            <div class="gr_grid_book_author">Akira Toriyama</div>
+                            <div class="gr_grid_book_rating">Rating: 4.8</div>
+                        </div>
+
+                        <div class="gr_grid_book_container">
+                            <a href="https://www.google.co.uk/books/edition/The_Trading_Game/jOLBEAAAQBAJ?hl=en&gbpv=0" target="_blank" rel="noopener noreferrer">
+                                <img src="https://is1-ssl.mzstatic.com/image/thumb/Publication211/v4/75/04/40/75044058-8b2f-5b75-fb59-382ed4114206/9781802062748.jpg/313x0w.webp" alt="The Trading Game">
+                            </a>
+                            <div class="gr_grid_book_title">The Trading Game</div>
+                            <div class="gr_grid_book_author">Ryan Jones</div>
+                            <div class="gr_grid_book_rating">Rating: 4.2</div>
+                        </div>
+
+                        <div class="gr_grid_book_container">
+                            <a href="https://www.google.co.uk/books/edition/We_Are_Anonymous/ucE1AAAAQBAJ?hl=en&gbpv=0" target="_blank" rel="noopener noreferrer">
+                                <img src="https://is1-ssl.mzstatic.com/image/thumb/Publication6/v4/c7/78/0c/c7780c51-919d-7eea-710c-843f5c4ed78e/9781448136155.jpg/313x0w.webp" alt="We Are Anonymous">
+                            </a>
+                            <div class="gr_grid_book_title">We Are Anonymous</div>
+                            <div class="gr_grid_book_author">Parmy Olson</div>
+                            <div class="gr_grid_book_rating">Rating: 4.1</div>
+                        </div>
+
+                        <div class="gr_grid_book_container">
+                            <a href="https://www.google.co.uk/books/edition/Dandadan_Vol_1/j1KMEAAAQBAJ?hl=en&gbpv=0" target="_blank" rel="noopener noreferrer">
+                                <img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781974734634/dandadan-vol-1-9781974734634_lg.jpg" alt="Dandadan Vol 1">
+                            </a>
+                            <div class="gr_grid_book_title">Dandadan, Vol. 1</div>
+                            <div class="gr_grid_book_author">Yukinobu Tatsu</div>
+                            <div class="gr_grid_book_rating">Rating: 4.5</div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <a class="btn" rel="nofollow" href="https://www.goodreads.com/user/show/179615667-saeed-ahmed" target="_blank">
+                            goodreads://saeed-ahmed
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="content-section" id="contact">
+            <div class="section-header">
+                <div class="section-cmd">
+                    <span class="prompt-user">Saeed</span>:~$ <span>./initiate_comm_channel.py</span>
+                </div>
+                <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+            </div>
+            <div class="section-content">
+                <h2>Direct Dispatch & Contact</h2>
+                <p>Have an inquiry regarding cybersecurity research, lecturing, or security advisory? Transmit a packet below.</p>
+                
+                <form class="terminal-form" action="https://formspree.io/f/mnnblyje" method="POST">
+                    <div class="form-group">
+                        <label class="form-label" for="name">&gt; PARAM --sender-name:</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="email">&gt; PARAM --sender-email:</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="message">&gt; PAYLOAD --encrypted-body:</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your dispatch message here..." required></textarea>
+                    </div>
+
+                    <div class="button-group" style="justify-content: flex-start;">
+                        <button type="submit" class="btn btn-primary">Transmit Packet [Send]</button>
+                        <a href="https://www.linkedin.com/in/saeedahmed40" target="_blank" rel="noopener noreferrer" class="btn">Connect on LinkedIn</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Terminal Footer -->
+    <footer>
+        <div class="footer-status">
+            <span class="terminal-dot-status"></span>
+            <span>SYSTEM INTEGRITY: NORMAL | ZERO VULNERABILITIES DETECTED</span>
         </div>
-      </section>
-
-      <!-- Section: Technical Core Competencies -->
-      <section id="skills" class="terminal-section">
-        <div class="cli-prompt">
-          <span class="prompt-user">saeed@secops-terminal</span>:<span class="prompt-dir">~</span>$ <span class="prompt-cmd">cat /etc/security/capabilities.conf</span>
+        <div class="button-group">
+            <a href="https://www.linkedin.com/in/saeedahmed40" class="btn btn-sm" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/saeedahmed40" class="btn btn-sm" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://orcid.org/0009-0003-0613-4368" class="btn btn-sm" target="_blank" rel="noopener noreferrer">ORCID</a>
+            <a href="https://www.credly.com/users/saeedahmed40/badges" class="btn btn-sm" target="_blank" rel="noopener noreferrer">Credly</a>
+            <a href="https://www.researchgate.net/profile/Mohammed-Saeed-Ahmed-2" class="btn btn-sm" target="_blank" rel="noopener noreferrer">ResearchGate</a>
         </div>
+        <p style="margin-top: 1.5rem;">&copy; <span id="year">2026</span> Saeed Ahmed. Secured & Published.</p>
+    </footer>
 
-        <div class="data-grid grid-3">
-          <div class="data-card">
-            <div class="card-header">SECURITY OPERATIONS &amp; DEFENSE</div>
-            <ul class="cli-list">
-              <li>Threat Detection, Triage &amp; Incident Handling</li>
-              <li>Network Security &amp; Enterprise Firewalls</li>
-              <li>Vulnerability Assessment &amp; Penetration Testing</li>
-              <li>Snort IDS/IPS Signature Authoring &amp; PCAP Analysis</li>
-              <li>SIEM Event Monitoring &amp; Log Analysis</li>
-              <li>Anti-Phishing &amp; Human-Factor Risk Mitigation</li>
-            </ul>
-          </div>
+    <script>
+        // Automatic Year
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-          <div class="data-card">
-            <div class="card-header">GOVERNANCE, RISK &amp; COMPLIANCE</div>
-            <ul class="cli-list">
-              <li>ISO/IEC 27001 ISMS Alignment</li>
-              <li>Cyber Essentials Compliance Readiness</li>
-              <li>Microsoft 365 Identity &amp; Access Management (IAM)</li>
-              <li>Principle of Least Privilege (PoLP) Enforcement</li>
-              <li>Information Security Policy Writing</li>
-              <li>Endpoint Security Posture Audits</li>
-            </ul>
-          </div>
+        // Optional CRT scanline toggle
+        const toggleBtn = document.getElementById('toggleCrtBtn');
+        const scanlineLayer = document.getElementById('scanlineLayer');
+        let crtEnabled = true;
 
-          <div class="data-card">
-            <div class="card-header">INFRASTRUCTURE &amp; TOOLING</div>
-            <ul class="cli-list">
-              <li>TP-Link Omada SDN &amp; VLAN Segmentation</li>
-              <li>Linux Administration (Debian, Ubuntu, Kali)</li>
-              <li>Python Security Automation &amp; Scripting</li>
-              <li>Microsoft Purview Data Loss Prevention (DLP)</li>
-              <li>Google Cloud Platform (GCP) Security</li>
-              <li>pfSense Hardware Firewall Deployment</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section: Professional Experience -->
-      <section id="experience" class="terminal-section">
-        <div class="cli-prompt">
-          <span class="prompt-user">saeed@secops-terminal</span>:<span class="
+        toggleBtn.addEventListener('click', () => {
+            crtEnabled = !crtEnabled;
+            if (crtEnabled) {
+                scanlineLayer.classList.remove('off');
+                toggleBtn.textContent = 'CRT: ON';
+                toggleBtn.style.color = '#fff';
+            } else {
+                scanlineLayer.classList.add('off');
+                toggleBtn.textContent = 'CRT: OFF';
+                toggleBtn.style.color = '#777';
+            }
+        });
+    </script>
+</body>
+</html>
