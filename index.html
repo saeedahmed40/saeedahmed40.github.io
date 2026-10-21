@@ -1,404 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Saeed Ahmed - Cybersecurity Specialist, Researcher, and IT Cybersecurity Officer" />
-  <title>Saeed Ahmed | Cybersecurity Portfolio &amp; Research</title>
+  <meta name="description" content="Saeed Ahmed, MBCS - IT Cybersecurity Officer & Applied Security Researcher" />
+  <title>Saeed Ahmed, MBCS | Cybersecurity &amp; Research Portfolio</title>
 
-  <!-- External Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="#home" class="logo">Saeed Ahmed</a>
-      <ul class="nav-menu">
-        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-        <li class="nav-item"><a href="#research" class="nav-link">Research</a></li>
-        <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-        <li class="nav-item"><a href="#credentials" class="nav-link">Credentials</a></li>
-        <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
-        <li class="nav-item"><a href="#hobbies" class="nav-link">Hobbies</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero / Home Section -->
-  <section id="home" class="hero">
-    <div class="hero-container">
-      <div class="profile-card">
-        <img src="your-profile-image.jpg" alt="Saeed Ahmed Profile Picture" class="profile-pic" />
-        <h1 class="name">Saeed Ahmed</h1>
-        <p class="role">Cybersecurity Specialist &amp; Researcher</p>
-        <div class="hero-buttons">
-          <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" class="btn btn-linkedin">
-            <i class="fab fa-linkedin"></i> Connect on LinkedIn
-          </a>
-          <a href="#contact" class="btn btn-email">
-            <i class="fas fa-envelope"></i> Email Me
-          </a>
-        </div>
+  <!-- Terminal Frame Container -->
+  <div class="terminal-shell">
+    
+    <!-- Header / Window Title Bar -->
+    <header class="terminal-titlebar">
+      <div class="window-controls" aria-hidden="true">
+        <span class="control-dot close"></span>
+        <span class="control-dot minimize"></span>
+        <span class="control-dot maximize"></span>
       </div>
+      <div class="window-title">saeed@secops-terminal: ~/portfolio (sh)</div>
+    </header>
 
-      <div class="about-card">
-        <h2>About Me</h2>
-        <p>
-          First Class Cybersecurity graduate (USW) and current MRes researcher with extensive industry and enterprise support experience. As an active IT Cybersecurity Officer, I bridge technical engineering with regulatory compliance (ISO/IEC 27001, Cyber Essentials) and human-layer defense. Authored the Crypto Scam Assessment &amp; Mitigation (CSAM) framework presented at international conferences.
-        </p>
-        <div class="memberships">
-          <h3>Professional Memberships</h3>
-          <p>
-            Committed to the highest standards of ethics and technical conduct as a member of the <strong>British Computer Society (BCS)</strong>, continuously engaging with industry professional development frameworks and security standards.
-          </p>
+    <!-- Top Navigation Anchor Bar -->
+    <nav class="terminal-nav" aria-label="Main Navigation">
+      <a href="#about" class="nav-item">[01:about]</a>
+      <a href="#skills" class="nav-item">[02:skills]</a>
+      <a href="#experience" class="nav-item">[03:experience]</a>
+      <a href="#research" class="nav-item">[04:research]</a>
+      <a href="#projects" class="nav-item">[05:projects]</a>
+      <a href="#credentials" class="nav-item">[06:credentials]</a>
+      <a href="#education" class="nav-item">[07:education]</a>
+      <a href="#contact" class="nav-item">[08:contact]</a>
+    </nav>
+
+    <main class="terminal-body">
+
+      <!-- Section: Executive Summary -->
+      <section id="about" class="terminal-section">
+        <div class="cli-prompt">
+          <span class="prompt-user">saeed@secops-terminal</span>:<span class="prompt-dir">~</span>$ <span class="prompt-cmd">whoami --verbose</span>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Skills Matrix -->
-  <section id="skills" class="skills-section">
-    <div class="container">
-      <h2>Skills &amp; Expertise</h2>
-      <p class="section-desc">Technologies and methodologies validated through professional experience, certifications, and research.</p>
+        <div class="hero-layout">
+          <div class="profile-sidebar">
+            <img src="your-profile-image.jpg" alt="Saeed Ahmed" class="profile-photo" />
+            <div class="status-badge">
+              <span class="status-pulse"></span> ROLE: ACTIVE CYBER DEFENSE
+            </div>
+          </div>
 
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3>Cybersecurity &amp; Defence</h3>
-          <div class="tags">
-            <span class="tag">Network Security</span>
-            <span class="tag">Incident Response</span>
-            <span class="tag">Vulnerability Assessment</span>
-            <span class="tag">Penetration Testing</span>
-            <span class="tag">Threat Detection</span>
-            <span class="tag">Malware Analysis</span>
-            <span class="tag">SIEM &amp; Event Monitoring</span>
-            <span class="tag">Firewalls &amp; IDS/IPS</span>
-            <span class="tag">Social Engineering Defense</span>
+          <div class="profile-details">
+            <h1 class="profile-name">Saeed Ahmed, MBCS</h1>
+            <p class="profile-headline">IT Cybersecurity Officer &amp; Applied Security Researcher</p>
+            
+            <p class="profile-bio">
+              Applied cybersecurity professional with demonstrated experience across enterprise security operations, Zero Trust identity architectures, and regulatory governance (ISO/IEC 27001 &amp; Cyber Essentials). Currently serving as IT Cybersecurity Officer within a regulated financial setting and executing postgraduate research at the University of South Wales[cite: 1]. Author of the peer-reviewed <strong>Crypto Scam Assessment &amp; Mitigation (CSAM)</strong> framework, bridging technical controls with cognitive human defense[cite: 1].
+            </p>
+
+            <div class="cta-actions">
+              <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" class="cli-button">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+              <a href="https://github.com/saeedahmed40" target="_blank" rel="noopener noreferrer" class="cli-button">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="#contact" class="cli-button cli-button-primary">
+                <i class="fas fa-envelope"></i> Contact Direct
+              </a>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="skill-category">
-          <h3>Governance, Risk, Compliance &amp; IAM</h3>
-          <div class="tags">
-            <span class="tag">ISO/IEC 27001</span>
-            <span class="tag">Cyber Essentials</span>
-            <span class="tag">Risk Management</span>
-            <span class="tag">Identity &amp; Access Management (IAM)</span>
-            <span class="tag">Least Privilege Control</span>
-            <span class="tag">Information Security Policies</span>
-            <span class="tag">Audit Readiness</span>
+      <!-- Section: Technical Core Competencies -->
+      <section id="skills" class="terminal-section">
+        <div class="cli-prompt">
+          <span class="prompt-user">saeed@secops-terminal</span>:<span class="prompt-dir">~</span>$ <span class="prompt-cmd">cat /etc/security/capabilities.conf</span>
+        </div>
+
+        <div class="data-grid grid-3">
+          <div class="data-card">
+            <div class="card-header">SECURITY OPERATIONS &amp; DEFENSE</div>
+            <ul class="cli-list">
+              <li>Threat Detection, Triage &amp; Incident Handling</li>
+              <li>Network Security &amp; Enterprise Firewalls</li>
+              <li>Vulnerability Assessment &amp; Penetration Testing</li>
+              <li>Snort IDS/IPS Signature Authoring &amp; PCAP Analysis</li>
+              <li>SIEM Event Monitoring &amp; Log Analysis</li>
+              <li>Anti-Phishing &amp; Human-Factor Risk Mitigation</li>
+            </ul>
+          </div>
+
+          <div class="data-card">
+            <div class="card-header">GOVERNANCE, RISK &amp; COMPLIANCE</div>
+            <ul class="cli-list">
+              <li>ISO/IEC 27001 ISMS Alignment</li>
+              <li>Cyber Essentials Compliance Readiness</li>
+              <li>Microsoft 365 Identity &amp; Access Management (IAM)</li>
+              <li>Principle of Least Privilege (PoLP) Enforcement</li>
+              <li>Information Security Policy Writing</li>
+              <li>Endpoint Security Posture Audits</li>
+            </ul>
+          </div>
+
+          <div class="data-card">
+            <div class="card-header">INFRASTRUCTURE &amp; TOOLING</div>
+            <ul class="cli-list">
+              <li>TP-Link Omada SDN &amp; VLAN Segmentation</li>
+              <li>Linux Administration (Debian, Ubuntu, Kali)</li>
+              <li>Python Security Automation &amp; Scripting</li>
+              <li>Microsoft Purview Data Loss Prevention (DLP)</li>
+              <li>Google Cloud Platform (GCP) Security</li>
+              <li>pfSense Hardware Firewall Deployment</li>
+            </ul>
           </div>
         </div>
+      </section>
 
-        <div class="skill-category">
-          <h3>Cloud, Infrastructure &amp; Tooling</h3>
-          <div class="tags">
-            <span class="tag">Microsoft 365 Security</span>
-            <span class="tag">TP-Link Omada SDN</span>
-            <span class="tag">VLAN Segmentation</span>
-            <span class="tag">Linux Administration</span>
-            <span class="tag">Google Cloud (GCP)</span>
-            <span class="tag">Python Scripting</span>
-            <span class="tag">Bash Automation</span>
-            <span class="tag">IoT Security</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Professional Experience -->
-  <section id="experience" class="experience-section">
-    <div class="container">
-      <h2>Professional Experience</h2>
-      <div class="experience-timeline">
-
-        <div class="experience-item">
-          <div class="exp-header">
-            <h3>IT Cybersecurity Officer</h3>
-            <span class="company">Mortgage Lane</span>
-            <span class="duration">May 2026 – Present</span>
-          </div>
-          <ul class="exp-points">
-            <li>Designed and implemented granular user access controls to enforce the principle of least privilege in Microsoft 365, reducing data exposure risks.</li>
-            <li>Conducted comprehensive network audits and deployed VLAN segmentation policies via TP-Link Omada to isolate sensitive business systems.</li>
-            <li>Established and enforced patch management workflows across all endpoint infrastructure to maintain consistent system hygiene.</li>
-            <li>Configured network appliances, managing router and switch configurations to guarantee robust resilience.</li>
-            <li>Mapped internal security controls directly to Cyber Essentials and ISO/IEC 27001 standards to ensure audit readiness.</li>
-          </ul>
-        </div>
-
-        <div class="experience-item">
-          <div class="exp-header">
-            <h3>Hourly Paid Lecturer &amp; Demonstrator</h3>
-            <span class="company">University of South Wales</span>
-            <span class="duration">February 2026 – Present</span>
-          </div>
-          <ul class="exp-points">
-            <li>Facilitate interactive, multi-modal lab sessions covering offensive and defensive cybersecurity methodologies, OSINT, and network inspection.</li>
-            <li>Collaborate with faculty members to align practical exercises with evolving industry security frameworks.</li>
-            <li>Deliver technical assessments and targeted student evaluations to drive academic progression.</li>
-          </ul>
-        </div>
-
-        <div class="experience-item">
-          <div class="exp-header">
-            <h3>IT Support Technician (Volunteer)</h3>
-            <span class="company">Clwb Ffoto &amp; Ffoto Newport</span>
-            <span class="duration">2022 – Present</span>
-          </div>
-          <ul class="exp-points">
-            <li>Provided direct hardware and software support to end-users, troubleshooting workstation and network issues.</li>
-            <li>Maintained internal IT infrastructure, workstations, and local backup policies to ensure business continuity.</li>
-          </ul>
-        </div>
-
-        <div class="experience-item">
-          <div class="exp-header">
-            <h3>Cyber Clinic Volunteer</h3>
-            <span class="company">USW Cyber Clinic</span>
-            <span class="duration">October 2022 – May 2024</span>
-          </div>
-          <ul class="exp-points">
-            <li>Provided pro-bono security reviews and awareness guidance to local community members and small organizations.</li>
-            <li>Delivered practical education regarding credential hygiene, phishing recognition, and endpoint configuration.</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Research & Frameworks -->
-  <section id="research" class="research-section">
-    <div class="container">
-      <h2>Research &amp; Case Studies</h2>
-
-      <div class="card-grid">
-        <div class="project-card featured">
-          <div class="project-header">
-            <span class="badge">Published Research</span>
-            <h3>Feast on the Desperate</h3>
-            <span class="date">Presented August 2025</span>
-          </div>
-          <div class="project-body">
-            <p><strong>The Challenge:</strong> Analyzes the systematic exploitation of human vulnerabilities in cryptocurrency fraud, focusing on parasocial dynamics, FOMO, and deceptive social engineering vectors.</p>
-            <p><strong>Methodology:</strong> Synthesizes behavioral indicators with the SCAMS checklist, the I-PACE cognitive model, and technical prevention mechanics to engineer the Crypto Scam Assessment &amp; Mitigation (CSAM) framework.</p>
-            <p><strong>Key Findings:</strong> Proves that threat actors purposefully exploit social trust barriers that bypass traditional technical warnings, necessitating a hybridized psycho-technical defense strategy.</p>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <span class="badge">In Progress (MRes)</span>
-            <h3>Ray of Hope for the Desperate</h3>
-            <span class="date">Expected Completion: Ongoing</span>
-          </div>
-          <div class="project-body">
-            <p>Expands on original scam research into generative AI manipulation, evaluating how synthetic media and automated conversational agents scale targeted financial fraud.</p>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <span class="badge">Special Study</span>
-            <h3>Child Safety &amp; Metaverse Virtual Worlds</h3>
-            <span class="date">Completed Analysis</span>
-          </div>
-          <div class="project-body">
-            <p>Investigated attack surfaces, identity spoofing, and moderation vulnerabilities across immersive persistent environments (such as VRChat), evaluating regulatory and technical safeguards.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Technical Projects (Integrated from projects.html) -->
-  <section id="projects" class="projects-section">
-    <div class="container">
-      <h2>Technical Projects &amp; Incident Drills</h2>
-
-      <div class="card-grid">
-        <div class="project-card">
-          <h3>Snort Live Attack &amp; Defense</h3>
-          <p>Configured Snort IDS/IPS in a live virtual lab, authored custom detection signatures, and mitigated both external brute-force vectors and active internal reverse-shell connections.</p>
-        </div>
-
-        <div class="project-card">
-          <h3>FCB Bank PLC Incident Investigation</h3>
-          <p>Investigated a complex, simulated multi-stage intrusion involving initial breach reconnaissance, internal lateral movement, artifact deletion, and unauthorized customer data exfiltration.</p>
-        </div>
-
-        <div class="project-card">
-          <h3>Code Red for Healthcare (Zero Trust)</h3>
-          <p>Architectural whitepaper evaluating the acute ransomware threat targeting the NHS, proposing an attack-surface reduction strategy centered around Zero Trust and modern secure-by-design endpoints.</p>
-        </div>
-
-        <div class="project-card">
-          <h3>Machine Learning Fraud Detection</h3>
-          <p>Engineered predictive behavioral classification models on large-scale mobile transaction datasets to identify anomalous and fraudulent transfers in real time.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Credentials & Badges (Integrated from courses.html) -->
-  <section id="credentials" class="credentials-section">
-    <div class="container">
-      <h2>Credentials &amp; Certifications</h2>
-      <p class="section-desc">Industry-standard accreditations validating technical, defensive, and governance expertise.</p>
-
-      <div class="badges-grid">
-        <div class="badge-card">
-          <i class="fas fa-shield-alt badge-icon"></i>
-          <h4>CompTIA Security+</h4>
-          <p>CompTIA</p>
-        </div>
-
-        <div class="badge-card">
-          <i class="fas fa-network-wired badge-icon"></i>
-          <h4>Cisco CyberOps Associate</h4>
-          <p>Cisco</p>
-        </div>
-
-        <div class="badge-card">
-          <i class="fas fa-user-shield badge-icon"></i>
-          <h4>Cisco Ethical Hacker</h4>
-          <p>Cisco</p>
-        </div>
-
-        <div class="badge-card">
-          <i class="fas fa-certificate badge-icon"></i>
-          <h4>Google Cybersecurity Professional</h4>
-          <p>Google</p>
-        </div>
-
-        <div class="badge-card">
-          <i class="fas fa-cloud badge-icon"></i>
-          <h4>ChromeOS Administrator</h4>
-          <p>Google</p>
-        </div>
-
-        <div class="badge-card">
-          <i class="fas fa-clipboard-check badge-icon"></i>
-          <h4>ISO/IEC 27001 Foundation</h4>
-          <p>Information Security Governance</p>
-        </div>
-
-        <div class="badge-card">
-          <i class="fas fa-id-badge badge-icon"></i>
-          <h4>Member (MBCS)</h4>
-          <p>British Computer Society</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education -->
-  <section id="education" class="education-section">
-    <div class="container">
-      <h2>Education</h2>
-
-      <div class="education-timeline">
-        <div class="education-item">
-          <div class="edu-header">
-            <h3>Masters by Research (MRes) in Applied Cybersecurity</h3>
-            <span class="institution">University of South Wales</span>
-            <span class="edu-date">2025 – Present (On-Going)</span>
-          </div>
-          <p>Rigorous, independent research program dedicated to developing defensive fraud frameworks and countering emerging synthetic social engineering vectors.</p>
-        </div>
-
-        <div class="education-item">
-          <div class="edu-header">
-            <h3>BSc (Hons) Applied Cybersecurity</h3>
-            <span class="institution">University of South Wales</span>
-            <span class="edu-date">Graduated: June 2025</span>
-          </div>
-          <p><strong>Grade: First Class Honours</strong></p>
-          <p>Covered network architecture, cryptographic implementations, ethical penetration testing, incident handling, digital crime scene management, and compliance governance.</p>
-        </div>
-
-        <div class="education-item">
-          <div class="edu-header">
-            <h3>BTEC Level 3 Extended Diploma in Computing</h3>
-            <span class="institution">Coleg Gwent</span>
-            <span class="edu-date">Completed: August 2022</span>
-          </div>
-          <p><strong>Grade: Distinction, Merit, Merit (DMM)</strong></p>
-          <p>Core curriculum in computer system architecture, relational database development, network configuration, and systems analysis.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interests & Leadership (Integrated from hobbies.html) -->
-  <section id="hobbies" class="hobbies-section">
-    <div class="container">
-      <h2>Leadership &amp; Interests</h2>
-      <div class="card-grid">
-        <div class="project-card">
-          <h3>Home Lab &amp; Infrastructure</h3>
-          <p>Building local-first homelab networks with custom pfSense firewalls, isolated VLAN zones for IoT, and automated containerized environments.</p>
-        </div>
-
-        <div class="project-card">
-          <h3>Cyber Forensics Newport (CFN)</h3>
-          <p>Co-founded and organized a university student society dedicated to hosting industry speakers, security capture-the-flag (CTF) events, and hands-on workshops.</p>
-        </div>
-
-        <div class="project-card">
-          <h3>Footwear Restoration &amp; Heritage Craft</h3>
-          <p>Restoring and maintaining Goodyear-welted leather footwear and vintage tech systems, emphasizing longevity, preventive maintenance, and craftsmanship.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact (Integrated from contact.html) -->
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <h2>Contact</h2>
-      <p class="section-desc">Reach out for technical audits, academic collaborations, or professional enquiries.</p>
-
-      <div class="contact-wrapper">
-        <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="_replyto" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-
-        <div class="contact-links">
-          <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
-          <a href="https://github.com/saeedahmed40" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-          <a href="https://orcid.org" target="_blank" rel="noopener noreferrer"><i class="fab fa-orcid"></i> ORCID</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Saeed Ahmed. All rights reserved.</p>
-    </div>
-  </footer>
-
-</body>
-</html>
+      <!-- Section: Professional Experience -->
+      <section id="experience" class="terminal-section">
+        <div class="cli-prompt">
+          <span class="prompt-user">saeed@secops-terminal</span>:<span class="
