@@ -1,26 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saeed Ahmed | Cybersecurity Portfolio & Research</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description"
-        content="Saeed Ahmed - Cybersecurity Professional with a First Class Honours degree and practical expertise in threat management, incident response, and social engineering.">
+        content="Saeed Ahmed: First Class Honours cybersecurity graduate and MRes researcher in crypto-fraud prevention, with hands-on experience in Microsoft 365 security, network segmentation and incident response.">
     <meta name="keywords"
         content="Cybersecurity, Portfolio, Research, Saeed Ahmed, Threat Management, Incident Response, Social Engineering">
     <meta name="author" content="Saeed Ahmed">
     <meta name="robots" content="index, follow">
+
+    <!-- TODO: replace with your real domain -->
+    <link rel="canonical" href="https://www.example.com/">
+
+    <!-- Open Graph / link previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Saeed Ahmed | Cybersecurity Portfolio & Research">
+    <meta property="og:description"
+        content="Cybersecurity graduate and researcher focused on crypto-fraud prevention and the human side of security.">
+    <meta property="og:image"
+        content="https://images.credly.com/images/2afcedd4-34eb-4bf8-b657-26ed6cd9f936/standard_PXL_20250715_110517180.jpg">
+    <meta name="twitter:card" content="summary">
+
     <link rel="stylesheet" href="style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Saeed Ahmed",
+      "jobTitle": "Cybersecurity Specialist & Researcher",
+      "alumniOf": "University of South Wales",
+      "sameAs": [
+        "https://www.linkedin.com/in/saeedahmed40",
+        "https://github.com/saeedahmed40",
+        "https://orcid.org/0009-0003-0613-4368",
+        "https://www.credly.com/users/saeedahmed40/badges",
+        "https://www.researchgate.net/profile/Mohammed-Saeed-Ahmed-2"
+      ]
+    }
+    </script>
 </head>
 
 <body>
     <header>
         <div class="nav-links">
-            <h1>Saeed Ahmed</h1>
-            <nav>
-                <a href="index.html" class="btn">Home</a>
+            <!-- Was an <h1>; now a <p> so the page has a single h1.
+                 In style.css change `.nav-links h1` to `.nav-links .site-name`. -->
+            <p class="site-name">Saeed Ahmed</p>
+            <nav aria-label="Main">
+                <a href="index.html" class="btn" aria-current="page">Home</a>
                 <a href="projects.html" class="btn">Projects</a>
                 <a href="courses.html" class="btn">Courses</a>
                 <a href="hobbies.html" class="btn">Hobbies</a>
@@ -28,11 +59,23 @@
             </nav>
         </div>
     </header>
+
+    <!-- In-page section navigation -->
+    <nav class="section-nav" aria-label="On this page">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#experience">Experience</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
     <main>
         <section class="hero-section">
             <img class="profile-image"
                 src="https://images.credly.com/images/2afcedd4-34eb-4bf8-b657-26ed6cd9f936/standard_PXL_20250715_110517180.jpg"
-                alt="Saeed Ahmed Profile Picture">
+                alt="Saeed Ahmed" width="200" height="200">
             <div class="typewriter">
                 <h1 class="main-title">Saeed Ahmed</h1>
                 <p class="sub-title">Cybersecurity Specialist & Researcher</p>
@@ -42,153 +85,127 @@
                     class="btn btn-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="feather feather-linkedin">
+                        aria-hidden="true" focusable="false">
                         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                         <rect x="2" y="9" width="4" height="12"></rect>
                         <circle cx="4" cy="4" r="2"></circle>
                     </svg>
                     Connect on LinkedIn
                 </a>
-                <a href="contact.html" class="btn">
-                    Email Me
-                </a>
+                <a href="contact.html" class="btn">Email Me</a>
             </div>
         </section>
 
-        <section class="content-section">
+        <section class="content-section" id="about">
             <h2>About Me</h2>
-            <p>First Class Cybersecurity graduate (USW) with 4+ years in IT & support. Expert in SecOps & Cloud, I
-                bridge technical & human security. Authored a crypto-scam framework presented at an international
-                conference. A versatile, forward-thinking pro.</p>
+            <p>First Class Cybersecurity graduate (University of South Wales), now researching crypto-fraud prevention
+                at MRes level. I combine four years of IT support experience with hands-on security work in
+                Microsoft 365, network segmentation and ISO/IEC 27001 alignment, and I present research on the human
+                side of security at international conferences.</p>
         </section>
-        <section class="content-section">
+
+        <section class="content-section" id="memberships">
             <h2>Professional Memberships</h2>
-            <p>As a dedicated cybersecurity professional, I am committed to upholding the highest standards of ethics
-                and conduct in the industry. I am a member of the British Computer Society (BCS), which provides me with
-                access to a wealth of resources, networking opportunities, and professional development programs.</p>
-            <div class="badge-container" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+            <p>I am a member of the British Computer Society (BCS), and I work in line with its code of conduct.
+                Membership gives me access to networking, resources and professional development programmes.</p>
+            <div class="badge-container badge-container--single">
                 <a href="https://www.bcs.org/membership-and-registrations/become-a-member/bcs-code-of-conduct"
                     target="_blank" rel="noopener noreferrer">
-                    <img src="https://bcs.digitalmembership.co.uk/resources/img/pin-rittech-member.jpg"
-                        alt="BCS Student Member Badge"
-                        style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;" />
+                    <img class="badge badge--round"
+                        src="https://bcs.digitalmembership.co.uk/resources/img/pin-rittech-member.jpg"
+                        alt="BCS Student Member badge" width="150" height="150" loading="lazy">
                 </a>
             </div>
         </section>
-        <section class="content-section">
+
+        <section class="content-section" id="skills">
             <h2>Skills & Expertise</h2>
-            <p>A collection of technologies and methodologies I have gained expertise in, validated through professional
-                experience and certifications.</p>
+            <p>Core skills I use regularly and am confident discussing in depth.</p>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Cybersecurity & Defence</h3>
+                    <h3>Security Operations & Defence</h3>
                     <ul class="skills-list">
-                        <li>Cybersecurity</li>
-                        <li>Network Security</li>
                         <li>Incident Response</li>
-                        <li>Cyber Defense</li>
-                        <li>Data Security</li>
-                        <li>Penetration Testing</li>
-                        <li>Ethical Hacking</li>
-                        <li>Threat Detection & Assessment</li>
-                        <li>Vulnerability Assessment & Scanning</li>
-                        <li>Malware Analysis</li>
-                        <li>Phishing & Social Engineering</li>
                         <li>SIEM & Event Monitoring</li>
-                        <li>Firewalls</li>
+                        <li>Threat Detection & Assessment</li>
+                        <li>Vulnerability Assessment</li>
+                        <li>Penetration Testing</li>
+                        <li>Malware Analysis</li>
+                        <li>Network Security & Firewalls</li>
+                        <li>Phishing & Social Engineering</li>
                     </ul>
                 </div>
 
                 <div class="skill-category">
-                    <h3>Governance, Risk, Compliance & IAM</h3>
+                    <h3>Governance, Risk & Identity</h3>
                     <ul class="skills-list">
-                        <li>Information Security</li>
                         <li>Risk Assessment & Management</li>
+                        <li>ISO/IEC 27001 & Cyber Essentials</li>
                         <li>Security Policies</li>
-                        <li>Information Assurance</li>
-                        <li>Identity & Access Management (IAM)</li>
-                        <li>Authentication</li>
-                        <li>Security Breach Analysis</li>
-                        <li>Information Security Analysis</li>
+                        <li>Identity & Access Management</li>
                     </ul>
                 </div>
 
                 <div class="skill-category">
-                    <h3>Cloud, Infrastructure & Technical Skills</h3>
+                    <h3>Cloud & Technical</h3>
                     <ul class="skills-list">
-                        <li>Cloud Security</li>
-                        <li>Cloud Computing (GCP)</li>
-                        <li>Linux</li>
-                        <li>System Administration</li>
-                        <li>Python</li>
-                        <li>Scripting</li>
-                        <li>IT Infrastructure Management</li>
-                        <li>Operating Systems</li>
-                        <li>Internet Of Things (IoT)</li>
-                        <li>Information Systems (IS)</li>
+                        <li>Microsoft 365 Security</li>
+                        <li>Cloud Security (GCP)</li>
+                        <li>Linux & System Administration</li>
+                        <li>Python & Scripting</li>
                     </ul>
                 </div>
 
                 <div class="skill-category">
-                    <h3>Professional & Business Competencies</h3>
+                    <h3>Professional</h3>
                     <ul class="skills-list">
                         <li>Problem Solving</li>
                         <li>Teamwork</li>
                         <li>Customer Support</li>
-                        <li>Professional Services</li>
-                        <li>Dealing With Enquiries</li>
                         <li>Operational Reporting</li>
-                        <li>Computer Literacy</li>
                     </ul>
                 </div>
             </div>
+            <p class="muted"><strong>Also familiar with:</strong> Data Security, Cyber Defence, Information Assurance,
+                Authentication, Security Breach Analysis, IT Infrastructure Management, Operating Systems, IoT.</p>
         </section>
-        <section class="content-section">
-            <h2>Education</h2>
-            <div class="project-card">
-                <h3>Masters by Research in Cybersecurity</h3>
-                <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1rem;">
-                    <img src="https://ctmmind.org.uk/wp-content/uploads/2019/07/USW-logo.jpg"
-                        alt="University of South Wales Logo" style="height: 80px; border-radius: 1px;">
-                    <p style="margin: 0; color: var(--light-text);">University of South Wales</p>
-                    <span style="font-size: 0.8rem; color: var(--secondary-text);">On-Going</span>
-                    <div style="margin-left: auto; font-size: 0.8rem; color: var(--secondary-text);">2025 - Present
-                    </div>
-                </div>
-                <p style="margin-top: 1.5rem; color: var(--secondary-text);"><strong>Award Date:</strong> TBD
-                <p style="margin-top: 0.5rem; color: var(--secondary-text);"><strong>Description:</strong></p>
-                <p>Executing a year-long, independent research programme focused on Crypto Fraud Prevention. Unlike a
-                    standard taught programme, this degree functioned as a rigorous R&D project requiring self-directed
-                    innovation, data synthesis, and critical analysis to result in a solid crypto fraud prevention
-                    framework.
 
-                </p>
-            </div>
-            <div class="project-card">
-                <h3>BSc (Hons) Applied Cybersecurity</h3>
-                <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1rem;">
+        <section class="content-section" id="education">
+            <h2>Education</h2>
+
+            <article class="project-card">
+                <h3>Masters by Research in Cybersecurity</h3>
+                <div class="card-meta">
                     <img src="https://ctmmind.org.uk/wp-content/uploads/2019/07/USW-logo.jpg"
-                        alt="University of South Wales Logo" style="height: 80px; border-radius: 1px;">
-                    <p style="margin: 0; color: var(--light-text);">University of South Wales</p>
-                    <span style="font-size: 0.8rem; color: var(--secondary-text);">Completed</span>
-                    <div style="margin-left: auto; font-size: 0.8rem; color: var(--secondary-text);">2022 - 2025</div>
+                        alt="University of South Wales logo" height="80" loading="lazy">
+                    <p class="card-org">University of South Wales</p>
+                    <span class="card-status">In progress</span>
+                    <span class="dates">2025 - Present</span>
                 </div>
-                <p style="margin-top: 1.5rem; color: var(--secondary-text);"><strong>Award Date:</strong> 17 June 2025
-                </p>
-                <p style="margin-top: 0.5rem; color: var(--secondary-text);"><strong>Final Grade:</strong> First Class
-                    Honours</p>
-                <p style="margin-top: 0.5rem; color: var(--secondary-text);"><strong>Description:</strong></p>
-                <p>The BSc (Hons) Applied Cybersecurity programme is designed to equip students with the knowledge and
-                    skills necessary to protect organisations from cyber threats. The curriculum covers a wide range of
-                    topics, including network security, cryptography, ethical hacking, digital forensics, and risk
-                    management. Students will also gain practical experience through hands-on labs and real-world
-                    projects, preparing them for careers in cybersecurity.</p>
+                <p class="muted"><strong>Award Date:</strong> TBD</p>
+                <p class="muted"><strong>Description:</strong></p>
+                <p>Year-long independent research project developing a crypto-fraud prevention framework, involving
+                    self-directed investigation, data synthesis and critical analysis.</p>
+            </article>
+
+            <article class="project-card">
+                <h3>BSc (Hons) Applied Cybersecurity</h3>
+                <div class="card-meta">
+                    <img src="https://ctmmind.org.uk/wp-content/uploads/2019/07/USW-logo.jpg"
+                        alt="University of South Wales logo" height="80" loading="lazy">
+                    <p class="card-org">University of South Wales</p>
+                    <span class="card-status">Completed</span>
+                    <span class="dates">2022 - 2025</span>
+                </div>
+                <p class="muted"><strong>Award Date:</strong> 17 June 2025</p>
+                <p class="muted"><strong>Final Grade:</strong> First Class Honours</p>
+                <p class="muted"><strong>Description:</strong></p>
+                <p>A practical programme covering network security, cryptography, ethical hacking, digital forensics
+                    and risk management, with hands-on labs and real-world projects.</p>
                 <details class="module-breakdown">
-                    <summary class="btn">View Detailed Module Breakdown</summary>
+                    <summary class="btn">View Final Year Modules</summary>
                     <div class="module-year">
                         <h4>Final Year (2024/2025) – Level 6</h4>
-                        <p><em>This year demonstrates a high level of specialisation and academic excellence,
-                                culminating in a First Class Honours classification.</em></p>
                         <ul>
                             <li>Secure Operations And Incident Management (IY3U001) <span><strong>76%</strong></span>
                             </li>
@@ -199,52 +216,31 @@
                         </ul>
                     </div>
                     <div class="module-year">
-                        <h4>Second Year (2023/2024) – Level 5</h4>
-                        <ul>
-                            <li>Compliance And Risk Management (IY25510) <span><strong>61%</strong></span></li>
-                            <li>Cyber Crime Research Project (IY2H511) <span><strong>58%</strong></span></li>
-                            <li>Web Applications And Cloud Security (IY25507) <span><strong>50%</strong></span></li>
-                            <li>Digital Crime Scene Management (IY25508) <span><strong>50%</strong></span></li>
-                            <li>Critical Systems Infrastructure (IY25512) <span><strong>48%</strong></span></li>
-                            <li>Secure Systems (IY2T509) <span><strong>46%</strong></span></li>
-                        </ul>
-                    </div>
-                    <div class="module-year">
-                        <h4>First Year (2022/2023) – Level 4</h4>
-                        <ul>
-                            <li>Network Configuration (IY1S407) <span><strong>52%</strong></span></li>
-                            <li>Cyber Security Tools And Practices (IY1S402) <span><strong>49%</strong></span></li>
-                            <li>Information Security And Governance (IY1S409) <span><strong>47%</strong></span></li>
-                            <li>Computer Systems & Security (IY15403) <span><strong>46%</strong></span></li>
-                            <li>Programming (IY1S408) <span><strong>44%</strong></span></li>
-                            <li>Professional Practice And Employability (IY1S401) <span><strong>35% (Compensated
-                                        Pass)</strong></span></li>
-                        </ul>
+                        <h4>Earlier years (Levels 4 and 5)</h4>
+                        <p>Covered compliance and risk management, cyber crime research, web application and cloud
+                            security, digital crime scene management, critical systems infrastructure, secure systems,
+                            network configuration, security tools and practices, information security governance and
+                            programming.</p>
                     </div>
                 </details>
-            </div>
-            <div class="project-card">
+            </article>
+
+            <article class="project-card">
                 <h3>BTEC Level 3 Extended Diploma in Computing</h3>
-                <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1rem;">
+                <div class="card-meta">
                     <img src="https://yt3.googleusercontent.com/g2Sd-JQA8fsoA8zNk1PdRv3OmTYXgr9F8HQjK9N1G29vFZLTE-Mkyz4IuzkjR2am16pu0BOQ=s900-c-k-c0x00ffffff-no-rj"
-                        alt="Coleg Gwent Logo" style="height: 80px; border-radius: 1px;">
-                    <p style="margin: 0; color: var(--light-text);">Coleg Gwent</p>
-                    <span style="font-size: 0.8rem; color: var(--secondary-text);">Completed</span>
-                    <div style="margin-left: auto; font-size: 0.8rem; color: var(--secondary-text);">2020 - 2022</div>
+                        alt="Coleg Gwent logo" height="80" loading="lazy">
+                    <p class="card-org">Coleg Gwent</p>
+                    <span class="card-status">Completed</span>
+                    <span class="dates">2020 - 2022</span>
                 </div>
-                <p style="margin-top: 1.5rem; color: var(--secondary-text);"><strong>Award Date:</strong> 15 August 2022
-                </p>
-                <p style="margin-top: 0.5rem; color: var(--secondary-text);"><strong>Final Grade:</strong> DMM
-                    (Equivalent to 3 A-Levels)</p>
-                <p style="margin-top: 0.5rem; color: var(--secondary-text);"><strong>Description:</strong></p>
-                <p>The BTEC Level 3 Extended Diploma in Computing is a comprehensive programme that provides students
-                    with a solid foundation in various aspects of computing. The curriculum covers a wide range of
-                    topics, including programming, database management, networking, web development, and systems
-                    analysis. The course is designed to equip students with both theoretical knowledge and practical
-                    skills, preparing them for further education or careers in the IT industry.</p>
+                <p class="muted"><strong>Award Date:</strong> 15 August 2022</p>
+                <p class="muted"><strong>Final Grade:</strong> DMM (equivalent to 3 A-Levels)</p>
+                <p class="muted"><strong>Description:</strong></p>
+                <p>A broad grounding in computing, covering programming, databases, networking, web development and
+                    systems analysis, with both theory and practical work.</p>
                 <details class="module-breakdown">
                     <summary class="btn">View Detailed Module Breakdown</summary>
-
                     <div class="module-year">
                         <h4>Distinction</h4>
                         <ul>
@@ -267,335 +263,316 @@
                             <li>Computer Networking</li>
                             <li>Systems Methodology</li>
                         </ul>
-                        <h4>Other</h4>
-                        <ul>
-                            <li>Software Design and Development Project: Near Pass</li>
-                        </ul>
                     </div>
                 </details>
-            </div>
+            </article>
         </section>
-        <section class="content-section">
+
+        <section class="content-section" id="credentials">
             <h2>Credentials & Badges</h2>
-            <p>My certifications and achievements validate my expertise across a range of IT and cybersecurity
-                disciplines.</p>
+            <p>Certifications that validate my skills across IT and cybersecurity.</p>
+            <!--
+                TODO: please check each badge's link, image and alt text against Credly.
+                Where I wasn't sure of the correct URL I linked to your Credly badge list instead.
+            -->
             <div class="badge-container">
-                <a href="https://www.credly.com/earner/earned/badge/84a37d90-ded7-4f18-982e-9a4d6dc2639f" target="_blank"
+                <a href="https://www.credly.com/earner/earned/badge/84a37d90-ded7-4f18-982e-9a4d6dc2639f"
+                    target="_blank" rel="noopener noreferrer">
+                    <img class="badge"
+                        src="https://images.credly.com/size/340x340/images/8630f885-621e-420a-bdb5-11fe53d1caf6/image.png"
+                        alt="Google Cybersecurity and CompTIA Security+ dual badge" width="200" height="200"
+                        loading="lazy">
+                </a>
+                <a href="https://www.credly.com/badges/6cd1ca2a-05c0-4ad3-a334-e3c6eebe14db" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="https://images.credly.com/size/340x340/images/8630f885-621e-420a-bdb5-11fe53d1caf6/image.png"
-                        style="width: 200px; height: 200px; border-radius: 5%; object-fit: cover;"
-                        alt="Google Comptia Security Duel Badge">
-                 <a href="https://www.credly.com/badges/6cd1ca2a-05c0-4ad3-a334-e3c6eebe14db" target="_blank"
-                    rel="noopener noreferrer">
-                    <img src="https://images.credly.com/size/340x340/images/80d8a06a-c384-42bf-ad36-db81bce5adce/blob"
-                        style="width: 200px; height: 200px; border-radius: 5%; object-fit: cover;"
-                        alt="Comptia Security+ Badge">
+                    <img class="badge"
+                        src="https://images.credly.com/size/340x340/images/80d8a06a-c384-42bf-ad36-db81bce5adce/blob"
+                        alt="CompTIA Security+ badge" width="200" height="200" loading="lazy">
+                </a>
                 <a href="https://www.credly.com/badges/fb61f0e9-ffa3-442f-b861-713a808a6c09" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="https://images.credly.com/size/680x680/images/505080ad-3731-4b1d-98df-347655a45750/image.png"
-                        style="width: 200px; height: 200px; border-radius: 5%; object-fit: cover;"
-                        alt="Google Cloud Cybersecurity Certificate Badge">
+                    <img class="badge"
+                        src="https://images.credly.com/size/680x680/images/505080ad-3731-4b1d-98df-347655a45750/image.png"
+                        alt="Google Cloud Cybersecurity Certificate badge" width="200" height="200" loading="lazy">
                 </a>
                 <a href="https://www.credly.com/badges/be87d0ad-02c3-4d14-ae5d-7b3d8cc301c2" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="https://images.credly.com/size/680x680/images/0bf0f2da-a699-4c82-82e2-56dcf1f2e1c7/image.png"
-                        style="width: 200px; height: 200px; border-radius: 5%; object-fit: cover;"
-                        alt="Google Cybersecurity Professional Certificate V2 Badge">
+                    <img class="badge"
+                        src="https://images.credly.com/size/680x680/images/0bf0f2da-a699-4c82-82e2-56dcf1f2e1c7/image.png"
+                        alt="Google Cybersecurity Professional Certificate badge" width="200" height="200"
+                        loading="lazy">
                 </a>
                 <a href="https://www.credly.com/badges/c2a58f47-b8d8-40aa-9774-2ca92ab4ade9" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="https://images.credly.com/size/680x680/images/ae2f5bae-b110-4ea1-8e26-77cf5f76c81e/GCC_badge_IT_Support_1000x1000.png"
-                        style="width: 200px; height: 200px; border-radius: 5%; object-fit: cover;"
-                        alt="Google Cloud Certified IT Support Badge">
+                    <img class="badge"
+                        src="https://images.credly.com/size/680x680/images/ae2f5bae-b110-4ea1-8e26-77cf5f76c81e/GCC_badge_IT_Support_1000x1000.png"
+                        alt="Google IT Support badge" width="200" height="200" loading="lazy">
                 </a>
+                <!-- Image/alt swapped to match: the CyberOpsAssoc.png file is the CyberOps badge -->
                 <a href="https://www.credly.com/badges/d28ebef8-429f-48ea-8ed0-e67a1cbfae9f" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="https://images.credly.com/size/680x680/images/242902b5-f527-42ad-865e-977c9e1b5b58/image.png"
-                        style="width: 200px; height: 200px; border-radius: 5%; object-fit: cover;"
-                        alt="Cisco CyberOps Associate Badge">
+                    <img class="badge"
+                        src="https://images.credly.com/size/680x680/images/242902b5-f527-42ad-865e-977c9e1b5b58/image.png"
+                        alt="Cisco Ethical Hacker badge" width="200" height="200" loading="lazy">
                 </a>
                 <a href="https://www.credly.com/badges/e107af8a-f34d-4fc8-badd-4f223ed0ee98" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="https://images.credly.com/size/680x680/images/53f37f83-04a1-4935-9b1e-21a99cc6e1b2/CyberOpsAssoc.png"
-                        style="width: 200px; height: 200px; border-radius: 5%; object-fit: cover;"
-                        alt="Cisco Ethical Hacker Badge">
+                    <img class="badge"
+                        src="https://images.credly.com/size/680x680/images/53f37f83-04a1-4935-9b1e-21a99cc6e1b2/CyberOpsAssoc.png"
+                        alt="Cisco CyberOps Associate badge" width="200" height="200" loading="lazy">
                 </a>
-                <a href="https://www.credly.com/badges/e107af8a-f34d-4fc8-badd-4f223ed0ee98" target="_blank"
+                <!-- Previously duplicated the CyberOps link; replace with this badge's own URL -->
+                <a href="https://www.credly.com/users/saeedahmed40/badges" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="https://images.credly.com/size/680x680/images/a850079a-75bb-41e1-adae-dedfabcf597c/Professional_Certificate_-_IBM_Cybersecurity_Analyst.png"
-                        style="width: 200px; height: 200px; border-radius: 5%; object-fit: cover;"
-                        alt="IBM Cybersecurity Analyst Professional Certificate Badge">
-                </a>
-                <a href="https://www.credly.com/users/saeedahmed40/badges#other" target="_blank"
-                    rel="noopener noreferrer">
-                    <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/122222083"
-                        alt="ChromeOS Admin Badge">
+                    <img class="badge"
+                        src="https://images.credly.com/size/680x680/images/a850079a-75bb-41e1-adae-dedfabcf597c/Professional_Certificate_-_IBM_Cybersecurity_Analyst.png"
+                        alt="IBM Cybersecurity Analyst Professional Certificate badge" width="200" height="200"
+                        loading="lazy">
                 </a>
                 <a href="https://www.credly.com/users/saeedahmed40/badges#other" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="https://vbeventstorage.blob.core.windows.net/cert-czhurdjzznvg960s-xhpm/openbadges/badges/bd95ea60-7857-470c-9b7c-46da8b761571.png"
-                        style="width: 200px; height: 200px; border-radius: 5%; object-fit: cover;"
-                        alt="BCS Ethical IT Badge">
+                    <img class="badge"
+                        src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/122222083"
+                        alt="ChromeOS Admin badge" width="200" height="200" loading="lazy">
+                </a>
+                <a href="https://www.credly.com/users/saeedahmed40/badges#other" target="_blank"
+                    rel="noopener noreferrer">
+                    <img class="badge"
+                        src="https://vbeventstorage.blob.core.windows.net/cert-czhurdjzznvg960s-xhpm/openbadges/badges/bd95ea60-7857-470c-9b7c-46da8b761571.png"
+                        alt="BCS Ethical IT badge" width="200" height="200" loading="lazy">
                 </a>
             </div>
-            <a href="https://www.credly.com/users/saeedahmed40/badges" class="btn btn-primary">Credly By Pearson</a>
+            <a href="https://www.credly.com/users/saeedahmed40/badges" class="btn btn-primary" target="_blank"
+                rel="noopener noreferrer">View all badges on Credly</a>
         </section>
 
-        <section class="content-section">
+        <section class="content-section" id="experience">
             <h2>Professional Experience</h2>
-            <div class="project-card">
+
+            <article class="project-card">
                 <h3>IT Cybersecurity Officer</h3>
-                <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1rem;">
+                <div class="card-meta">
                     <img src="https://mortgageadviser.directory/wp-content/uploads/2024/06/mortgage-lane.jpg"
-                        alt="Mortgage Lane" style="height: 80px; border-radius: 1px;">
-                    <p style="margin: 0; color: var(--light-text);">Mortgage Lane</p>
+                        alt="Mortgage Lane logo" height="80" loading="lazy">
+                    <p class="card-org">Mortgage Lane</p>
                 </div>
-                <p style="margin-top: 1.5rem; color: var(--secondary-text);"><strong>Role Duration:</strong> May 2026 -
-                    Present</p>
-                <p style="margin-top: 0.5rem; color: var(--secondary-text);"><strong>Key Responsibilities:</strong></p>
-                <ul style="margin-top: 0.5rem; color: var(--secondary-text);">
-                    <li>Designed and implemented user access controls to enforce the principle of least privilege in Microsoft 365, reducing the risk of unauthorised data access.</li>
-                    <li>Conducted comprehensive network audits and deployed segmentation policies through the Omada network ecosystem to successfully isolate critical business systems.</li>
-                    <li>Established and enforced patch management and patch cycles across all endpoint infrastructure to maintain system integrity and security posture.</li>
-                    <li>Configured and hardened network infrastructure, managing configurations for routers and switches using industry-standard syntax to ensure robust and reliable connectivity.</li>
-                    <li>Mapped and aligned internal security policies, operational procedures, and technical controls directly to Cyber Essentials and ISO/IEC 27001 standards to ensure audit readiness and regulatory compliance.</li>
+                <p class="muted"><strong>Role Duration:</strong> May 2026 - Present</p>
+                <p class="muted"><strong>Key Responsibilities:</strong></p>
+                <ul class="muted">
+                    <li>Designed and implemented user access controls enforcing least privilege in Microsoft 365,
+                        reducing the risk of unauthorised data access.</li>
+                    <li>Audited the network and deployed segmentation policies through the Omada ecosystem to isolate
+                        critical business systems.</li>
+                    <li>Established and enforced patch management cycles across all endpoints to maintain system
+                        integrity and security posture.</li>
+                    <li>Configured and hardened routers and switches, keeping connectivity robust and reliable.</li>
+                    <li>Mapped internal policies, procedures and technical controls to Cyber Essentials and ISO/IEC
+                        27001 to support audit readiness and compliance.</li>
+                    <!-- Optional: add numbers, e.g. "across X users / Y devices" -->
                 </ul>
-            </div>
-            <div class="project-card">
+            </article>
+
+            <article class="project-card">
                 <h3>Hourly Paid Lecturer</h3>
-                <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1rem;">
+                <div class="card-meta">
                     <img src="https://ctmmind.org.uk/wp-content/uploads/2019/07/USW-logo.jpg"
-                        alt="University of South Wales" style="height: 80px; border-radius: 1px;">
-                    <p style="margin: 0; color: var(--light-text);">University of South Wales</p>
+                        alt="University of South Wales logo" height="80" loading="lazy">
+                    <p class="card-org">University of South Wales</p>
                 </div>
-                <p style="margin-top: 1.5rem; color: var(--secondary-text);"><strong>Role Duration:</strong> February
-                    2026 - Present</p>
-                <p style="margin-top: 0.5rem; color: var(--secondary-text);"><strong>Key Responsibilities:</strong></p>
-                <ul style="margin-top: 0.5rem; color: var(--secondary-text);">
-                    <li>Facilitate engaging, multi-modal sessions and collaborate with colleagues on curriculum
-                        structures.</li>
-                    <li>Execute comprehensive student evaluations and provide targeted feedback to drive academic
-                        progression.</li>
-                    <li>Develop and update course materials to ensure alignment with industry standards.</li>
+                <p class="muted"><strong>Role Duration:</strong> February 2026 - Present</p>
+                <p class="muted"><strong>Key Responsibilities:</strong></p>
+                <ul class="muted">
+                    <li>Deliver multi-modal teaching sessions and collaborate with colleagues on curriculum
+                        structure.</li>
+                    <li>Assess student work and give targeted feedback to support academic progression.</li>
+                    <li>Develop and update course materials to keep them aligned with industry standards.</li>
+                    <!-- Optional: name the modules taught and approximate cohort sizes -->
                 </ul>
-            </div>
-            <div class="project-card">
+            </article>
+
+            <article class="project-card">
                 <h3>Customer Assistant</h3>
-                <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1rem;">
-                    <img src="https://commons.wikimedia.org/wiki/File:B%26Q_company_logo.svg"
-                        alt="B&Q" style="height: 80px; border-radius: 1px;">
-                    <p style="margin: 0; color: var(--light-text);">B&Q</p>
+                <div class="card-meta">
+                    <!-- Fixed: the old URL was a Wikimedia page, not an image. For reliability, save the logo locally. -->
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/B%26Q_company_logo.svg"
+                        alt="B&amp;Q logo" height="80" loading="lazy">
+                    <p class="card-org">B&amp;Q</p>
                 </div>
-                <p style="margin-top: 1.5rem; color: var(--secondary-text);"><strong>Role Duration:</strong> July 2021 - May 2026</p>
-                <p style="margin-top: 0.5rem; color: var(--secondary-text);"><strong>Key Responsibilities:</strong></p>
-                <ul style="margin-top: 0.5rem; color: var(--secondary-text);">
-                    <li>Provided high-level customer support, efficiently resolving inquiries and addressing
-                        customer concerns.</li>
-                    <li>Operated tills and handled transactions with accuracy, maintaining inventory and stock
-                        levels.</li>
-                    <li>Collaborated with team members to enhance service delivery and maintain operational
-                        readiness.</li>
+                <p class="muted"><strong>Role Duration:</strong> July 2021 - May 2026</p>
+                <p class="muted"><strong>Key Responsibilities:</strong></p>
+                <ul class="muted">
+                    <li>Resolved customer enquiries and concerns, providing high-quality support in a busy retail
+                        environment.</li>
+                    <li>Handled till transactions accurately and helped maintain stock levels.</li>
+                    <li>Worked with the team to keep service levels high and the store operationally ready.</li>
                 </ul>
-            </div>
-            <div class="project-card">
+            </article>
+
+            <article class="project-card">
                 <h3>IT Support Technician (Volunteer)</h3>
-                <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1rem;">
+                <div class="card-meta">
                     <img src="https://www.clwbffoto.com/wp-content/uploads/go-x/u/904810ba-c463-4b81-a32e-a1eef90edc73/image-455x455.jpg"
-                        alt="Clwb Ffoto" style="height: 80px; border-radius: 1px;">
-                    <p style="margin: 0; color: var(--light-text);">Clwb Ffoto</p>
+                        alt="Clwb Ffoto logo" height="80" loading="lazy">
+                    <p class="card-org">Clwb Ffoto</p>
                 </div>
-                <p style="margin-top: 1.5rem; color: var(--secondary-text);"><strong>Role Duration:</strong> Mar 2025 -
-                    Present </p>
-                <p style="margin-top: 0.5rem; color: var(--secondary-text);"><strong>Key Responsibilities:</strong></p>
-                <ul style="margin-top: 0.5rem; color: var(--secondary-text);">
-                    <li>Provided technical support to end-users, resolving hardware and software issues efficiently.
-                    </li>
-                    <li>Assisted in the maintenance of computer systems and networks to ensure continuous operational
-                        readiness.</li>
-                    <li>Collaborated with team members to enhance service delivery and IT processes.</li>
+                <p class="muted"><strong>Role Duration:</strong> March 2025 - Present</p>
+                <p class="muted"><strong>Key Responsibilities:</strong></p>
+                <ul class="muted">
+                    <li>Provide technical support to end users, resolving hardware and software issues.</li>
+                    <li>Help maintain computer systems and networks so they stay available.</li>
+                    <li>Work with the team to improve service delivery and IT processes.</li>
                 </ul>
-            </div>
-            <div class="project-card">
+            </article>
+
+            <article class="project-card">
                 <h3>IT Support Technician (Volunteer)</h3>
-                <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1rem;">
-                    <p style="margin: 0; color: var(--light-text);">Ffoto Newport | 35mm Creative Agency</p>
+                <div class="card-meta">
+                    <p class="card-org">Ffoto Newport | 35mm Creative Agency</p>
                 </div>
-                <p style="margin-top: 1.5rem; color: var(--secondary-text);"><strong>Role Duration:</strong> February
-                    2022 - December 2024</p>
-                <p style="margin-top: 0.5rem; color: var(--secondary-text);"><strong>Key Responsibilities:</strong></p>
-                <ul style="margin-top: 0.5rem; color: var(--secondary-text);">
-                    <li>Provided technical support to end-users, resolving hardware and software issues efficiently.
-                    </li>
-                    <li>Assisted in the maintenance of computer systems and networks to ensure continuous operational
-                        readiness.</li>
-                    <li>Collaborated with team members to enhance service delivery and IT processes.</li>
+                <p class="muted"><strong>Role Duration:</strong> February 2022 - December 2024</p>
+                <p class="muted"><strong>Key Responsibilities:</strong></p>
+                <ul class="muted">
+                    <li>Provided technical support to end users, resolving hardware and software issues.</li>
+                    <li>Helped maintain computer systems and networks to keep them operational.</li>
+                    <li>Worked with the team to improve service delivery and IT processes.</li>
                 </ul>
-            </div>
-            <div class="project-card">
+            </article>
+
+            <article class="project-card">
                 <h3>Cybersecurity Open-Day Volunteer</h3>
-                <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1rem;">
+                <div class="card-meta">
                     <img src="https://ctmmind.org.uk/wp-content/uploads/2019/07/USW-logo.jpg"
-                        alt="University of South Wales Logo" style="height: 80px; border-radius: 1px;">
-                    <p style="margin: 0; color: var(--light-text);">University of South Wales</p>
+                        alt="University of South Wales logo" height="80" loading="lazy">
+                    <p class="card-org">University of South Wales</p>
                 </div>
-                <p style="margin-top: 1.5rem; color: var(--secondary-text);"><strong>Role Duration:</strong> July 2025
-                </p>
-                <p style="margin-top: 0.5rem; color: var(--secondary-text);"><strong>Key Responsibilities:</strong></p>
-                <ul style="margin-top: 0.5rem; color: var(--secondary-text);">
-                    <li>Facilitated interactive cybersecurity activities for secondary school visitors, focusing on
-                        practical applications of OSINT and critical thinking.</li>
-                    <li>Guided students through engaging challenges designed to develop analytical reasoning and
-                        problem-solving skills.</li>
-                    <li>Translated complex cybersecurity concepts into accessible and engaging content for a younger
-                        audience.</li>
+                <p class="muted"><strong>Role Duration:</strong> July 2025</p>
+                <p class="muted"><strong>Key Responsibilities:</strong></p>
+                <ul class="muted">
+                    <li>Ran interactive cybersecurity activities for secondary school visitors, focused on practical
+                        OSINT and critical thinking.</li>
+                    <li>Guided students through challenges that build analytical reasoning and problem solving.</li>
+                    <li>Explained complex security concepts in an accessible way for a younger audience.</li>
                 </ul>
-            </div>
+            </article>
 
-            <div class="project-card">
+            <article class="project-card">
                 <h3>Cyber Clinic Volunteer</h3>
-                <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1rem;">
+                <div class="card-meta">
                     <img src="https://ctmmind.org.uk/wp-content/uploads/2019/07/USW-logo.jpg"
-                        alt="University of South Wales Logo" style="height: 80px; border-radius: 1px;">
-                    <p style="margin: 0; color: var(--light-text);">University of South Wales</p>
+                        alt="University of South Wales logo" height="80" loading="lazy">
+                    <p class="card-org">University of South Wales</p>
                 </div>
-                <p style="margin-top: 1.5rem; color: var(--secondary-text);"><strong>Role Duration:</strong> October
-                    2022 - May 2024</p>
-                <p style="margin-top: 0.5rem; color: var(--secondary-text);"><strong>Key Responsibilities:</strong></p>
-                <ul style="margin-top: 0.5rem; color: var(--secondary-text);">
-                    <li>Provided pro-bono cybersecurity advice to members of the public on a range of personal security
-                        topics.</li>
-                    <li>Educated individuals on best practices for password security, phishing awareness, and safe
-                        online behaviour.</li>
-                    <li>Assessed personal security risks and recommended clear, actionable steps for improvement.</li>
+                <p class="muted"><strong>Role Duration:</strong> October 2022 - May 2024</p>
+                <p class="muted"><strong>Key Responsibilities:</strong></p>
+                <ul class="muted">
+                    <li>Gave free cybersecurity advice to members of the public on personal security topics.</li>
+                    <li>Taught password security, phishing awareness and safe online behaviour.</li>
+                    <li>Assessed personal security risks and recommended clear, actionable improvements.</li>
                 </ul>
-            </div>
+            </article>
         </section>
-        <section class="content-section">
+
+        <section class="content-section" id="research">
             <h2>Research & Projects</h2>
-            <p>Here is my research output and case studies that demonstrate my skills and expertise.</p>
-            <div class="project-card">
-                <h3>Ray of Hope for the Desperate</h3>
-                <p>Currently Researching</p>
-                <p>This research expands on the findings of Feast on the Desperate, a study that explored the impact of
-                    social engineering on individuals and organisations. It delves into the role of parasocial
-                    relationships in scam victimisation and provides practical recommendations for individuals to
-                    protect themselves from these sophisticated schemes.</p>
-                <p><em class="btn">Expected Completion: TBD</em></p>
-            </div>
-            <div class="project-card">
-                <h3>Metaverse & Exposure of Children to the Dark Corners of the Internet</h3>
-                <p>Currently Researching</p>
-                <p>The metaverse, an expanding network of persistent, immersive virtual worlds, presents novel
-                    challenges for child safety. While platforms such as VRChat offer unprecedented social interaction,
-                    their open and often unmoderated nature creates significant risks. These environments can expose
-                    minors to harmful content, grooming, and simulated sexual assault, mirroring the dangers of the
-                    internet's most unregulated spaces. This research investigates the specific vulnerabilities inherent
-                    in such platforms, analyses the mechanisms through which harm occurs, and evaluates potential
-                    technological and policy-based safeguards to protect children in these nascent digital territories.
-                </p>
-                <p><em class="btn" target="_blank">Expected Completion: TBD </em></p>
-            </div>
-            <div class="project-card">
+            <p>Research output and case studies that demonstrate my skills. Published work comes first.</p>
+
+            <h3 class="subsection-title">Research</h3>
+
+            <article class="project-card">
                 <h3>Feast on the Desperate</h3>
-                <p>Release Date: <time>15/08/2025</time></p>
-                <p><strong>The Challenge:</strong> This paper addresses the escalating threat of cryptocurrency scams by
-                    examining the social engineering and psychological tactics that exploit individuals. We identify a
-                    critical gap in public awareness and expose how social media, leveraging platforms, influencers, and
-                    targeted advertising, is a primary vector for these sophisticated schemes. The research highlights
-                    that these scams succeed not just through technical means, but by preying on human vulnerabilities
-                    like FoMo (Fear of Missing Out) and other emotional manipulations.</p>
-                <p><strong>Methodology & Analysis:</strong> Through a detailed analysis of scam victimisation and
-                    real-world testimonies, this work delves into the psychological underpinnings of why individuals
-                    fall prey to these schemes. The paper synthesises elements from disparate fields, phishing
-                    prevention, the SCAMS Checklist, the I-PACE model, and insights from parasocial relationships to
-                    develop a new, comprehensive framework for scam prevention. This interdisciplinary approach provides
-                    a more holistic defence strategy.</p>
-                <p><strong>The Key Findings & Contributions:</strong>The study's findings confirm that scammers
-                    systematically exploit financial fears and parasocial trust to bypass logical decision making. Our
-                    primary contribution is the proposed comprehensive framework, which empowers individuals with a
-                    combined set of tools to identify and avoid fraudulent cryptocurrency schemes. This framework's
-                    novelty lies in its integration of psychological and social factors with established technical
-                    prevention methods.</p>
-                <p><strong>Implications & Conclusion:</strong> The implications of this research are significant for
-                    both individuals and organisations. By understanding the psychological tactics employed by scammers,
-                    we can better equip ourselves to resist these manipulative strategies. The proposed framework serves
-                    as a valuable resource for developing targeted educational initiatives and preventive measures in
-                    the fight against cryptocurrency scams.</p>
-                <a href="FeastontheDesperate.html" class="btn">Lecture</a>
-                <a href="https://pure.southwales.ac.uk/en/activities/8th-international-conference-on-emerging-technologies-in-computin"
-                    class="btn" target="_blank">View Presentation</a>
-                <a href="#" class="btn" target="_blank">Paper Release Soon</a>
+                <p>Release Date: <time datetime="2025-08-15">15/08/2025</time></p>
+                <p><strong>The Challenge:</strong> This paper addresses the escalating threat of cryptocurrency scams
+                    by examining the social engineering and psychological tactics that exploit individuals. It
+                    identifies a critical gap in public awareness and shows how social media, through platforms,
+                    influencers and targeted advertising, is a primary vector for these schemes. The scams succeed not
+                    just through technical means but by preying on human vulnerabilities such as FOMO (fear of missing
+                    out) and other emotional manipulation.</p>
+                <p><strong>Methodology & Analysis:</strong> Through analysis of scam victimisation and real-world
+                    testimonies, the work examines why individuals fall prey to these schemes. It synthesises phishing
+                    prevention, the SCAMS Checklist, the I-PACE model and insights from parasocial relationships to
+                    develop a new, comprehensive framework for scam prevention.</p>
+                <p><strong>Key Findings & Contributions:</strong> Scammers systematically exploit financial fears and
+                    parasocial trust to bypass logical decision making. The primary contribution is a framework that
+                    gives individuals a combined set of tools to identify and avoid fraudulent cryptocurrency schemes,
+                    integrating psychological and social factors with established technical prevention methods.</p>
+                <p><strong>Implications & Conclusion:</strong> Understanding the psychological tactics scammers use
+                    helps individuals and organisations resist them. The framework is a resource for targeted
+                    educational initiatives and preventive measures against cryptocurrency scams.</p>
+                <div class="button-group">
+                    <a href="FeastontheDesperate.html" class="btn">Watch the lecture</a>
+                    <a href="https://pure.southwales.ac.uk/en/activities/8th-international-conference-on-emerging-technologies-in-computin"
+                        class="btn" target="_blank" rel="noopener noreferrer">View conference presentation</a>
+                    <span class="btn" aria-disabled="true">Paper release soon</span>
+                </div>
+            </article>
 
-            </div>
-            <div class=>
+            <article class="project-card">
+                <h3>Ray of Hope for the Desperate</h3>
+                <p class="muted"><strong>Status:</strong> Currently researching</p>
+                <p>This research builds on <em>Feast on the Desperate</em>, examining the role of parasocial
+                    relationships in scam victimisation and offering practical recommendations that help individuals
+                    protect themselves from these sophisticated schemes.</p>
+                <p><span class="btn">Expected completion: TBD</span></p>
+            </article>
 
-            </div>
-            <div class="project-card">
+            <article class="project-card">
+                <h3>Metaverse & Exposure of Children to the Dark Corners of the Internet</h3>
+                <p class="muted"><strong>Status:</strong> Currently researching</p>
+                <p>The metaverse, a growing network of persistent, immersive virtual worlds, presents new challenges
+                    for child safety. Platforms such as VRChat offer unprecedented social interaction, but their open
+                    and often unmoderated nature can expose minors to harmful content, grooming and simulated sexual
+                    assault. This research investigates the vulnerabilities of such platforms, analyses how harm
+                    occurs, and evaluates technological and policy-based safeguards for children.</p>
+                <p><span class="btn">Expected completion: TBD</span></p>
+            </article>
+
+            <h3 class="subsection-title">Selected Projects</h3>
+
+            <article class="project-card">
                 <h3>Cyber Drill: Incident Investigation of a Compromised System</h3>
-                <p>Release Date: <time>28/04/2025</time></p>
-                <p>FCB Bank PLC was the target of a sophisticated cyberattack that resulted in a data breach and the
-                    theft of sensitive customer information. The multi-stage attack involved gaining initial access,
-                    reconnaissance, tool deployment, internal network penetration, data collection and exfiltration, and
-                    attempts to destroy evidence. The breach has exposed FCB Bank PLC to potential legal, regulatory and
-                    reputational damage. Immediate action is required to contain the breach, fully investigate its
-                    extent and implement robust preventative measures to prevent future incidents.</p>
+                <p>Release Date: <time datetime="2025-04-28">28/04/2025</time></p>
+                <p>Investigation of a simulated multi-stage attack on FCB Bank PLC: initial access, reconnaissance,
+                    tool deployment, internal network penetration, data collection and exfiltration, and attempts to
+                    destroy evidence. The report covers containment, the extent of the breach, the legal, regulatory
+                    and reputational exposure, and the preventative measures needed to stop a repeat.</p>
                 <a href="https://saeedahmed40.medium.com/cyber-drill-incident-investigation-of-a-compromised-system-dfeab80a61bf"
-                    class="btn" target="_blank">View Report Details</a>
-            </div>
-            <div class="project-card">
+                    class="btn" target="_blank" rel="noopener noreferrer">View report details</a>
+            </article>
+
+            <article class="project-card">
                 <h3>Code Red for Healthcare: Why the NHS is Losing the War on Ransomware</h3>
-                <p>The National Health Service (NHS) is in a state of perpetual crisis, grappling with understaffing,
-                    overcrowding, and systemic delays. This operational fragility is being dangerously amplified by a
-                    relentless wave of cyberattacks. Ransomware, in particular, has proven to be a uniquely devastating
-                    threat, capable of crippling hospital operations, compromising patient data, and putting lives at
-                    risk.</p>
-                <p>This analysis argues that the NHS's vulnerability is not just a matter of insufficient funding but a
-                    fundamental flaw in its technological foundation. Its deep-seated reliance on traditional,
-                    high-maintenance operating systems like Windows creates an attack surface that is simply too vast to
-                    defend. The solution lies in a strategic pivot to a modern, secure-by-design platform. By adopting a
-                    'Zero Trust' architecture, exemplified by ChromeOS, the NHS can build a more resilient, manageable,
-                    and inherently secure infrastructure fit for the challenges of the 21st century.</p>
+                <p>The NHS is under constant operational strain, and that fragility is amplified by a relentless wave
+                    of cyberattacks. Ransomware can cripple hospital operations, compromise patient data and put lives
+                    at risk.</p>
+                <p>This white paper argues the problem is not only funding but a technological foundation that relies
+                    on high-maintenance operating systems, creating an attack surface that is too large to defend. It
+                    proposes a move to a secure-by-design, Zero Trust architecture, exemplified by ChromeOS.</p>
                 <a href="https://saeedahmed40.medium.com/code-red-for-healthcare-the-ransomware-epidemic-the-risk-to-life-e68976a19857"
-                    class="btn" target="_blank">View White Paper</a>
-            </div>
+                    class="btn" target="_blank" rel="noopener noreferrer">View white paper</a>
+            </article>
 
-            <div class="project-card">
+            <article class="project-card">
                 <h3>Snort Challenge - Live Attack</h3>
-                <p>This report details a cybersecurity exercise focused on using the Snort Intrusion Detection and
-                    Prevention System (IDS/IPS) to neutralise two distinct threats within a simulated corporate network.
-                    The project successfully demonstrated the process of traffic analysis, signature creation, and rule
-                    deployment to mitigate both an external brute-force attack and an internal reverse-shell compromise.
-                </p>
+                <p>A hands-on exercise using the Snort IDS/IPS to neutralise two threats in a simulated corporate
+                    network. It covers traffic analysis, signature creation and rule deployment to stop both an
+                    external brute-force attack and an internal reverse-shell compromise.</p>
                 <a href="https://saeedahmed40.medium.com/snort-challenge-live-attack-6bdefc5448da" class="btn"
-                    target="_blank">View Report Details</a>
-            </div>
-            <div class="project-card">
-                <h3>JPMorgan-Transaction - Detecting Financial Fraud with Machine Learning</h3>
-                <p>This project tackles the critical challenge of fraud in the burgeoning world of mobile money. By
-                    analysing a large-scale dataset from a financial services provider, I uncovered the subtle
-                    behavioural patterns that distinguish legitimate customers from fraudulent actors.</p>
-                <p>The core of this work involved moving beyond existing detection flags to engineer a highly accurate
-                    predictive model. The result is a set of actionable insights and a robust machine-learning framework
-                    designed to help organisations pre-emptively identify and stop fraud, enhancing system security and
-                    protecting customer assets.</p>
-                <a href="https://github.com/saeedahmed40/JPMorgan-Transaction/blob/main/README.md" class="btn"
-                    target="_blank">View Project Details</a>
-            </div>
-            <a href="projects.html" class="btn btn-primary">View All Projects</a>
+                    target="_blank" rel="noopener noreferrer">View report details</a>
+            </article>
 
+            <a href="projects.html" class="btn btn-primary">View all projects</a>
         </section>
 
-        <section class="content-section">
+        <section class="content-section" id="contact">
             <h2>Contact</h2>
-            <p>If you would like to get in touch, please feel free to reach out via email or connect with me on
-                LinkedIn.</p>
+            <p>To get in touch, email me or connect on LinkedIn.</p>
             <div class="button-group">
                 <a href="contact.html" class="btn">Email Me</a>
                 <a href="https://www.linkedin.com/in/saeedahmed40" target="_blank" rel="noopener noreferrer"
                     class="btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="feather feather-linkedin">
+                        aria-hidden="true" focusable="false">
                         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                         <rect x="2" y="9" width="4" height="12"></rect>
                         <circle cx="4" cy="4" r="2"></circle>
@@ -608,16 +585,23 @@
 
     <footer>
         <div class="button-group">
-            <a href="https://www.linkedin.com/in/saeedahmed40" class="btn">LinkedIn</a>
-            <a href="https://github.com/saeedahmed40" class="btn">GitHub</a>
-            <a href="https://orcid.org/0009-0003-0613-4368" class="btn">ORCID</a>
-            <a href="https://www.credly.com/users/saeedahmed40/badges" class="btn">Credly</a>
-            <a href="https://www.researchgate.net/profile/Mohammed-Saeed-Ahmed-2" class="btn">ResearchGate</a>
+            <a href="https://www.linkedin.com/in/saeedahmed40" class="btn" target="_blank"
+                rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/saeedahmed40" class="btn" target="_blank"
+                rel="noopener noreferrer">GitHub</a>
+            <a href="https://orcid.org/0009-0003-0613-4368" class="btn" target="_blank"
+                rel="noopener noreferrer">ORCID</a>
+            <a href="https://www.credly.com/users/saeedahmed40/badges" class="btn" target="_blank"
+                rel="noopener noreferrer">Credly</a>
+            <a href="https://www.researchgate.net/profile/Mohammed-Saeed-Ahmed-2" class="btn" target="_blank"
+                rel="noopener noreferrer">ResearchGate</a>
         </div>
-        <p>&copy; 2025 Saeed Ahmed. All Rights Reserved.</p>
+        <p>&copy; <span id="year">2026</span> Saeed Ahmed. All Rights Reserved.</p>
     </footer>
-    <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
